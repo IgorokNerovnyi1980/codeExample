@@ -1,10 +1,12 @@
-import React from 'react'
+import React, {
+  useState, useEffect,
+} from 'react'
 import {
   createGlobalStyle, ThemeProvider,
 } from 'styled-components'
 
 import {
-  baseTheme,
+  baseTheme, secondaryTheme,
 } from './themes'
 import connectComponent from './redux/connectComponent'
 import Routing from './Routing'
@@ -63,9 +65,26 @@ const GlobalStyle = createGlobalStyle`
 }
 `
 
-function App() {
+function App({
+  currentTheme,
+}) {
+  const [myTheme, setMyTheme] = useState(baseTheme)
+
+  useEffect(() => {
+    switch (currentTheme) {
+      case 'base':
+        setMyTheme(baseTheme)
+        break
+      case 'secondary':
+        setMyTheme(secondaryTheme)
+        break
+      default:
+        setMyTheme(baseTheme)
+    }
+  }, [currentTheme])
+
   return (
-    <ThemeProvider theme={baseTheme}>
+    <ThemeProvider theme={myTheme}>
       <GlobalStyle />
       <Routing />
     </ThemeProvider>

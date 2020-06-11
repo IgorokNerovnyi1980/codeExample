@@ -1,11 +1,30 @@
 export const Bg = {
   mainBG: '#FFFAFA',
   secondaryBG: '#a3bad9',
+}
+export const firstBg = {
+
   lightHotBg: '#f1c40f',
   darkHotBg: '#e77e23',
   accentBg: '#c1392b',
   lightColdBg: '#bec3c7',
   darkColdBg: '#95a5a5',
+}
+
+export const coldBg = {
+  lightHotBg: '#4B7175',
+  darkHotBg: '#223436',
+  accentBg: '#74AFB5',
+  lightColdBg: '#7CBBC2',
+  darkColdBg: '#64969C',
+}
+
+export const warmBg = {
+  lightHotBg: '#756B48',
+  darkHotBg: '#363121',
+  accentBg: '#B5A56E',
+  lightColdBg: '#C2B076',
+  darkColdBg: '#9E9061',
 }
 export const Fs = {
   titleFZ: '1.8em',
@@ -27,8 +46,11 @@ export const other = {
 }
 
 export default {
-  ...Bg,
-  ...Fs,
-  ...Shdw,
-  ...other,
+  Bg,
+  warmBg,
+  coldBg,
+  firstBg,
+  Fs,
+  Shdw,
+  other,
 }

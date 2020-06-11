@@ -2,5 +2,7 @@
 const Type = {
   GET_TEST: 'GET_TEST',
   GET_ALL_NEWS: 'GET_ALL_NEWS',
+  MAIN_THEME: 'MAIN_THEME',
+  SECONDARY_THEME: 'SECONDARY_THEME',
 }
 export default Type

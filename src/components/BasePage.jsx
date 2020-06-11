@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Header from './Header'
 import SidePiece from './SidePiece'
 import Center from './Center'
+import ThemeControler from './smollItems/ThemeConroler'
 
 const Wrapper = styled.div`
     width:100vw;
@@ -29,6 +30,7 @@ const BasePage = () => (
       </Center>
       <SidePiece>
         <p>Right Side</p>
+        <ThemeControler />
       </SidePiece>
     </Content>
   </Wrapper>

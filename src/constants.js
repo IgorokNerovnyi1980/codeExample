@@ -1,9 +1,9 @@
 import axios from 'axios'
 
 export const newsApi = {
-  url: 'https://newsapi.org/v2/',
-  cantry: 'us',
-  key: 'd0a98c7bc6be488cabf56ee0e965b091',
+  url: 'https://api.currentsapi.services/v1',
+  key: '5QG87mzeL4Ug_ywNym_xwmZeTWm0KknncOsxZeOkcX8ILfwl',
+
 }
 
 export const api = axios.create({
