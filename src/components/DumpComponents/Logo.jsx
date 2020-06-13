@@ -18,13 +18,13 @@ const Wrapper = styled.button`
 
 const Logo = ({
   fhClick = () => { },
+  label,
 }) => (
   <Wrapper
     type="button"
     onClick={fhClick}
   >
-    Your Logo
-
+    {label}
   </Wrapper>
 
 )

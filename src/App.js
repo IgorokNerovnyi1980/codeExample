@@ -4,10 +4,13 @@ import React, {
 import {
   createGlobalStyle, ThemeProvider,
 } from 'styled-components'
+import {
+  useDispatch,
+} from 'react-redux'
 
 import {
   baseTheme, secondaryTheme,
-} from './themes'
+} from './lib/themes'
 import connectComponent from './redux/connectComponent'
 import Routing from './Routing'
 
@@ -35,6 +38,9 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+  li{
+    list-style-type: none;
+  }
   h1, h2, h3, h4,h5, h6{
     font-weight: normal;
   }
@@ -42,6 +48,7 @@ const GlobalStyle = createGlobalStyle`
   input, textarea, button{
     outline: none;
     border:none;
+    background:none;
   }
   html{
     font-size: 62.5%;  /* 1rem = 10px */
@@ -68,6 +75,7 @@ const GlobalStyle = createGlobalStyle`
 function App({
   currentTheme,
 }) {
+  const dispatch = useDispatch()
   const [myTheme, setMyTheme] = useState(baseTheme)
 
   useEffect(() => {
@@ -82,6 +90,43 @@ function App({
         setMyTheme(baseTheme)
     }
   }, [currentTheme])
+
+  useEffect(() => {
+    const isHaveLang = localStorage.getItem('currentLang')
+    if (isHaveLang) {
+      dispatch({
+        type: 'CHANGE_LANG',
+        payload: isHaveLang,
+      })
+    } else {
+      const userLang = navigator.language || navigator.userLanguage
+      switch (userLang) {
+        case 'uk': dispatch({
+          type: 'CHANGE_LANG',
+          payload: 'uk',
+        })
+          localStorage.setItem('currentLang', 'uk')
+          break
+        case 'en': dispatch({
+          type: 'CHANGE_LANG',
+          payload: 'en',
+        })
+          localStorage.setItem('currentLang', 'en')
+          break
+        case 'ru': dispatch({
+          type: 'CHANGE_LANG',
+          payload: 'ru',
+        })
+          localStorage.setItem('currentLang', 'ru')
+          break
+        default: dispatch({
+          type: 'CHANGE_LANG',
+          payload: 'en',
+        })
+          localStorage.setItem('currentLang', 'en')
+      }
+    }
+  }, [dispatch])
 
   return (
     <ThemeProvider theme={myTheme}>

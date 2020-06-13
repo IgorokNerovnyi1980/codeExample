@@ -4,5 +4,6 @@ const Type = {
   GET_ALL_NEWS: 'GET_ALL_NEWS',
   MAIN_THEME: 'MAIN_THEME',
   SECONDARY_THEME: 'SECONDARY_THEME',
+  CHANGE_LANG: 'CHANGE_LANG',
 }
 export default Type

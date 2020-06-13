@@ -1,7 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import {
+  useSelector,
+} from 'react-redux'
 
 import Button from '../Button'
+import textData from '../../lib/textData.json'
 
 const Wrapper = styled.div`
     width:50%;
@@ -21,23 +25,29 @@ const Wrapper = styled.div`
     }
 `
 
-const Logo = ({
+const Search = ({
   fhChange = () => { },
-}) => (
-  <Wrapper>
-    <input
-      type="text"
-      value=""
-      placeholder="Your KeyWord"
-      onChange={fhChange}
-    />
-    <Button
-      label="Search"
-      dark
-    />
+}) => {
+  const currentLang = useSelector(state => state.lang.currentLang)
+  const {
+    search,
+  } = textData
+  return (
+    <Wrapper>
+      <input
+        type="text"
+        value=""
+        placeholder={search.placeholder[currentLang]}
+        onChange={fhChange}
+      />
+      <Button
+        label={search.button[currentLang]}
+        dark
+      />
 
-  </Wrapper>
+    </Wrapper>
 
-)
+  )
+}
 
-export default Logo
+export default Search

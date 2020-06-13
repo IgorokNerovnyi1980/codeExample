@@ -1,0 +1,14 @@
+{
+    "theme_selector":{
+        "ocean":{"uk":"морська тема","en":"ocean theme","ru":"морская тема"},
+        "sand":{"uk":"пісочна тема","en":"sand theme","ru":"песочная тема"}
+    },
+    "lang_list":["uk","en","ru"],
+    "logo":{"uk":"ваш логотип","en":"your logo","ru":"ваш логотип"},
+    "login":{"uk":"авторізація","en":"login","ru":"авторизация"},
+    "search":{
+        "button":{"uk":"знайти","en":"search","ru":"найти"},
+        "placeholder":{"uk":"ваше ключове слово","en":"your keyWord","ru":"ваше ключевое слово"}
+    }
+
+}

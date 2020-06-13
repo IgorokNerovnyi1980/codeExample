@@ -1,6 +1,6 @@
 import {
   api, newsApi,
-} from '../../constants'
+} from '../../lib/constants'
 import Type from '../types'
 
 export const getTestData = () => (dispatch) => {

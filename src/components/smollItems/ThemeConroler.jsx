@@ -1,10 +1,11 @@
 import React from 'react'
 import {
-  useDispatch,
+  useDispatch, useSelector,
 } from 'react-redux'
 import styled from 'styled-components'
 
 import Btn from '../Button'
+import textData from '../../lib/textData.json'
 
 const Wrapper = styled.div`
     width:100%;
@@ -16,18 +17,22 @@ const Wrapper = styled.div`
 
 const ThemeControler = () => {
   const dispatch = useDispatch()
+  const currentLang = useSelector(state => state.lang.currentLang)
+  const {
+    theme_selector,
+  } = textData
 
   return (
     <Wrapper>
       <Btn
-        label="sand Theme"
+        label={theme_selector.sand[currentLang]}
         fhClick={() => dispatch({
           type: 'SECONDARY_THEME',
         })}
         dark
       />
       <Btn
-        label="ocean Theme"
+        label={theme_selector.ocean[currentLang]}
         fhClick={() => dispatch({
           type: 'MAIN_THEME',
         })}

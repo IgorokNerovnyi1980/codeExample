@@ -8,10 +8,11 @@ import {
 } from './actions/index'
 
 const mapSTP = ({
-  news, theme,
+  news, theme, lang,
 }) => ({
   newsList: news.newsList,
   currentTheme: theme.currentTheme,
+  currentLang: lang.currentLang,
 })
 
 export default Page => connect(

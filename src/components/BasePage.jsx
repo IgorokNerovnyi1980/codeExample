@@ -5,6 +5,7 @@ import Header from './Header'
 import SidePiece from './SidePiece'
 import Center from './Center'
 import ThemeControler from './smollItems/ThemeConroler'
+import LangSelector from './smollItems/LangSelector'
 
 const Wrapper = styled.div`
     width:100vw;
@@ -24,6 +25,7 @@ const BasePage = () => (
     <Content>
       <SidePiece>
         <p>Left Side</p>
+        <LangSelector />
       </SidePiece>
       <Center>
         <p>Center</p>

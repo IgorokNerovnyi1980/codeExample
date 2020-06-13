@@ -1,5 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import {
+  useSelector,
+} from 'react-redux'
+
+import textData from '../lib/textData.json'
 
 import Button from './Button'
 import Logo from './DumpComponents/Logo'
@@ -19,15 +24,21 @@ const Wrapper = styled.div`
     align-items:center;
 `
 
-const Header = () => (
-  <Wrapper>
-    <Logo />
-    <Search />
-    <Button
-      label="login"
-      dark
-    />
-  </Wrapper>
-)
+const Header = () => {
+  const {
+    login, logo,
+  } = textData
+  const currentLang = useSelector(state => state.lang.currentLang)
+  return (
+    <Wrapper>
+      <Logo label={logo[currentLang]} />
+      <Search />
+      <Button
+        label={login[currentLang]}
+        dark
+      />
+    </Wrapper>
+  )
+}
 
 export default Header
