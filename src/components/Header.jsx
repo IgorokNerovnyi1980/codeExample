@@ -7,6 +7,7 @@ import {
 import textData from '../lib/textData.json'
 
 import Button from './Button'
+import NavMenu from './NavMenu'
 import Logo from './DumpComponents/Logo'
 import Search from './DumpComponents/Search'
 
@@ -16,7 +17,7 @@ const Wrapper = styled.div`
     left:0;
     width:100%;
     height:8rem;
-    padding:${props => props.theme.mainPad};
+    padding:2.4rem;
     background-color:${props => props.theme.darkColdBg};
     box-shadow:${props => props.theme.darkSmollBottomShdw};
     display:flex;
@@ -33,7 +34,8 @@ const Header = () => {
   return (
     <Wrapper>
       <Logo label={logo[currentLang]} />
-      {currentPage === 'news' && <Search />}
+      {currentPage === 'news' ? <Search /> : <NavMenu />}
+
       <Button
         label={login[currentLang]}
         dark

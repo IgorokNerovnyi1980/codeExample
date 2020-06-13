@@ -23,7 +23,7 @@ line-height: 1.5;
 text-align:justify;
 `
 const AccentText = styled(Paragraph)`
-    font-weight:500;
+    font-weight:600;
     font-style: italic;
     margin-top:0.5rem;
     margin-left:0.5rem;

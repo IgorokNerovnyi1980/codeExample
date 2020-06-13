@@ -2,20 +2,14 @@ import React from 'react'
 import {
   useDispatch, useSelector,
 } from 'react-redux'
-import styled from 'styled-components'
 
 import Btn from '../Button'
 import textData from '../../lib/textData.json'
 
-const Wrapper = styled.div`
-    width:100%;
-    padding:${props => props.theme.mainPad};
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-`
+import SmollContainer from './SmollContainer'
+import LangSelector from './LangSelector'
 
-const ThemeControler = () => {
+const AppControls = () => {
   const dispatch = useDispatch()
   const currentLang = useSelector(state => state.lang.currentLang)
   const {
@@ -23,7 +17,10 @@ const ThemeControler = () => {
   } = textData
 
   return (
-    <Wrapper>
+    <SmollContainer
+      height="50vh"
+      flexJustify
+    >
       <Btn
         label={theme_selector.sand[currentLang]}
         fhClick={() => dispatch({
@@ -38,7 +35,8 @@ const ThemeControler = () => {
         })}
         dark
       />
-    </Wrapper>
+      <LangSelector />
+    </SmollContainer>
   )
 }
-export default ThemeControler
+export default AppControls

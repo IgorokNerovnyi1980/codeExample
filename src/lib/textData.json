@@ -14,6 +14,10 @@
         "uk":"ще не вірішив, що буде в цьому блоці",
         "en":"not yet decided what will be in this block",
         "ru":"еще не решил, что будет в этом блоке"
+    },
+    "nav_menu":{
+        "test":{"uk":"меню","en":"nav menu","ru":"меню"},
+        "list":{"uk":[],"en":[],"ru":[]}
     }
 
 }
