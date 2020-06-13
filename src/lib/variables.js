@@ -1,6 +1,7 @@
 export const Bg = {
   mainBG: '#FFFAFA',
   secondaryBG: '#a3bad9',
+  greetingsBG: '#262222',
 }
 export const firstBg = {
 

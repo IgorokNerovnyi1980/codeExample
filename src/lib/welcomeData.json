@@ -1,0 +1,48 @@
+{
+    "title":{"uk":"Вітаю !!", "en":"Greetings !!", "ru":"Приветствую!!"},
+    "first_article":{
+        "uk":"Мене звуть Ігор і цей сайт зробив я, для презентації своїх навичок Frontend розробника. Функціонал і можливості програми будуть оновлюватися і змінюватися. Тому, деякі фічі описані нижче не будуть представлені - сорян)). Додаток не має серверної частини, тому вся інформація кешується в localStorage.",
+        "en":"My name is Igor and I made this website to present my Frontend developer skills. The functionality and capabilities of the application will be updated and changed. Therefore, some features described below will not be presented - sorry)). The application does not have a server part, so all information is cached in localStorage.",
+        "ru":"Меня зовут Игорь и этот сайт сделал я, для презентации своих навыков Frontend разработчика. Функционал и возможности приложения будут обновляться и изменяться. Поэтому, некоторые фичи описанные ниже не будут представлены – сорян)). Приложение не имеет серверной части, поэтому вся информация кэшируется в localStorage."
+    },
+    "second_article":{
+        "uk":"На сторінці AboutMe присутня контактна інформація.",
+        "en":"AboutMe page contains contact information.",
+        "ru":"На страничке AboutMe присутствует контактная информация."
+    },
+    "finally_article":{
+        "uk":"На цьому все. До зустрічі!",
+        "en":"That's all. See you!",
+        "ru":"На этом все. До встречи!"
+    },
+    "description":{
+        "title":{
+            "uk":"Про можливості програми:",
+            "en":"About the features of the application:",
+            "ru":"О возможностях приложения:"
+        },
+        "list":{
+            "uk":[
+                "Зміна колірної теми",
+                "Вибір мови",
+                "Прогноз погоди для вашої локації",
+                "Авторизація",
+                "Особистий кабінет"
+            ],
+            "en":[
+                "Change the color theme",
+                "Language Selection",
+                "Weather forecast for your location",
+                "Authorization",
+                "Personal Area"
+            ],
+            "ru":[
+                "Изменение цветовой темы",
+                "Выбор языка",
+                "Прогноз погоды для вашей локации",
+                "Авторизация",
+                "Личный кабинет"
+            ]
+        }
+    }
+}

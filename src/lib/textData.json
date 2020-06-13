@@ -9,6 +9,11 @@
     "search":{
         "button":{"uk":"знайти","en":"search","ru":"найти"},
         "placeholder":{"uk":"ваше ключове слово","en":"your keyWord","ru":"ваше ключевое слово"}
+    },
+    "right_side":{
+        "uk":"ще не вірішив, що буде в цьому блоці",
+        "en":"not yet decided what will be in this block",
+        "ru":"еще не решил, что будет в этом блоке"
     }
 
 }

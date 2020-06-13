@@ -9,10 +9,12 @@ const Wrapper = styled.button`
     color:${props => props.theme.mainBG};
     cursor:pointer;
     transition:0.2s;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     :hover{
         box-shadow:${props => props.theme.darkSmollBottomShdw};
     }
     :active{
+      
         transform:scale(0.97);
     }
 `

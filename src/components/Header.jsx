@@ -29,10 +29,11 @@ const Header = () => {
     login, logo,
   } = textData
   const currentLang = useSelector(state => state.lang.currentLang)
+  const currentPage = useSelector(state => state.page.currentPage)
   return (
     <Wrapper>
       <Logo label={logo[currentLang]} />
-      <Search />
+      {currentPage === 'news' && <Search />}
       <Button
         label={login[currentLang]}
         dark
