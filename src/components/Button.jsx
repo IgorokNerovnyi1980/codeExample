@@ -21,14 +21,14 @@ const Wrapper = styled.button`
 
 const Button = ({
   label = 'default',
-  fhClick = () => { },
+  fnClick = () => { },
   type = 'button',
   dark = false,
 }) => (
   <Wrapper
     dark={dark}
     type={type}
-    onClick={fhClick}
+    onClick={fnClick}
   >
     {label}
 

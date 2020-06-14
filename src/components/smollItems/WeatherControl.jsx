@@ -1,16 +1,14 @@
 import React from 'react'
-import {
-  useDispatch, useSelector,
-} from 'react-redux'
 
+import connectComponent from '../../redux/connectComponent'
 import Btn from '../Button'
 import textData from '../../lib/textData.json'
 
 import SmollContainer from './SmollContainer'
 
-const WeatherControl = () => {
-  const dispatch = useDispatch()
-  const currentLang = useSelector(state => state.lang.currentLang)
+const WeatherControl = ({
+  currentLang, baseWarning,
+}) => {
   const {
     weather,
   } = textData
@@ -22,10 +20,10 @@ const WeatherControl = () => {
     >
       <Btn
         label={weather.button[currentLang]}
-        // fhClick={}
+        fnClick={() => baseWarning('in development', currentLang)}
         dark
       />
     </SmollContainer>
   )
 }
-export default WeatherControl
+export default connectComponent(WeatherControl)

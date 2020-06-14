@@ -58,7 +58,7 @@ const InDevelopment = () => {
   return (
     <Background>
       <Wrapper to="/home">
-        <p>{development[currentLang]}</p>
+        <p>{development.page[currentLang]}</p>
         <LogoImg src={developer} />
 
       </Wrapper>

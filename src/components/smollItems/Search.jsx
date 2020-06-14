@@ -4,8 +4,8 @@ import {
   useSelector,
 } from 'react-redux'
 
-import Button from '../Button'
 import textData from '../../lib/textData.json'
+import Button from '../Button'
 
 const Wrapper = styled.div`
     width:50%;
@@ -26,7 +26,7 @@ const Wrapper = styled.div`
 `
 
 const Search = ({
-  fhChange = () => { },
+  fnChange = () => { },
 }) => {
   const currentLang = useSelector(state => state.lang.currentLang)
   const {
@@ -38,7 +38,7 @@ const Search = ({
         type="text"
         value=""
         placeholder={search.placeholder[currentLang]}
-        onChange={fhChange}
+        onChange={fnChange}
       />
       <Button
         label={search.button[currentLang]}

@@ -13,6 +13,7 @@ import {
 } from './lib/themes'
 import connectComponent from './redux/connectComponent'
 import Routing from './Routing'
+import Warning from './components/DumpComponents/Warning'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -132,6 +133,7 @@ function App({
     <ThemeProvider theme={myTheme}>
       <GlobalStyle />
       <Routing />
+      <Warning />
     </ThemeProvider>
   )
 }

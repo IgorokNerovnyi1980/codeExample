@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import {
   useSelector, useDispatch,
 } from 'react-redux'
+import shortid from 'shortid'
 
 import textData from '../../lib/textData.json'
 
@@ -97,7 +98,7 @@ const LangSelector = () => {
             return null
           }
           return (
-            <li>
+            <li key={shortid.generate()}>
               <button
                 type="button"
                 onClick={() => changeLang(el)}

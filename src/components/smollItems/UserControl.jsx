@@ -1,16 +1,14 @@
 import React from 'react'
-import {
-  useDispatch, useSelector,
-} from 'react-redux'
 
+import connectComponent from '../../redux/connectComponent'
 import Btn from '../Button'
 import textData from '../../lib/textData.json'
 
 import SmollContainer from './SmollContainer'
 
-const UserControl = () => {
-  const dispatch = useDispatch()
-  const currentLang = useSelector(state => state.lang.currentLang)
+const UserControl = ({
+  currentLang, baseWarning,
+}) => {
   const {
     login, right_side,
   } = textData
@@ -23,10 +21,10 @@ const UserControl = () => {
       <p>{right_side[currentLang]}</p>
       <Btn
         label={login[currentLang]}
-        // fhClick={}
+        fnClick={() => baseWarning('in development', currentLang)}
         dark
       />
     </SmollContainer>
   )
 }
-export default UserControl
+export default connectComponent(UserControl)

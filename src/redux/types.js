@@ -6,6 +6,8 @@ const Type = {
   CHANGE_LANG: 'CHANGE_LANG',
   MAIN_PAGE: 'MAIN_PAGE',
   NEWS_PAGE: 'NEWS_PAGE',
+  SHOW_WARNING: 'SHOW_WARNING',
+  REMOVE_WARNING: 'REMOVE_WARNING',
 
 }
 export default Type

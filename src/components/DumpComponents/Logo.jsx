@@ -4,7 +4,7 @@ import {
   Link,
 } from 'react-router-dom'
 
-import developer from '../../img/Developer.png'
+import developer from '../../img/developer.png'
 
 const Wrapper = styled.div`
     width:5rem;

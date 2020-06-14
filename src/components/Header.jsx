@@ -1,18 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 import {
-  useSelector,
-} from 'react-redux'
-import {
   useLocation,
 } from 'react-router-dom'
 
+import connectComponent from '../redux/connectComponent'
 import textData from '../lib/textData.json'
 
 import Button from './Button'
 import NavMenu from './NavMenu'
 import Logo from './DumpComponents/Logo'
-import Search from './DumpComponents/Search'
+import Search from './smollItems/Search'
 
 const Wrapper = styled.div`
     position: fixed;
@@ -28,25 +26,27 @@ const Wrapper = styled.div`
     align-items:center;
 `
 
-const Header = () => {
+const Header = ({
+  baseWarning, currentLang,
+}) => {
   const {
     pathname,
   } = useLocation()
   const {
     login, logo,
   } = textData
-  const currentLang = useSelector(state => state.lang.currentLang)
+
   return (
     <Wrapper>
       <Logo label={logo[currentLang]} />
       {pathname === '/news' ? <Search /> : <NavMenu />}
-
       <Button
         label={login[currentLang]}
+        fnClick={() => baseWarning('in development', currentLang)}
         dark
       />
     </Wrapper>
   )
 }
 
-export default Header
+export default connectComponent(Header)

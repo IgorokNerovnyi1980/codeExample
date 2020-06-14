@@ -5,11 +5,16 @@
     },
     "lang_list":["uk","en","ru"],
     "logo":{"uk":"ваш логотип","en":"your logo","ru":"ваш логотип"},
-    "development":{
+    "development":{"page":{
         "uk":"Сторінка в процесі створення, повернуться на головну сторінку",
         "en":"Page in development, return to the main page",
         "ru":"Страница в процессе создания, вернутся на главную страницу"
     },
+"button":{
+    "uk":"розділ в розробці",
+    "en":"section in development",
+    "ru":"раздел в разработке"
+}},
     "login":{"uk":"авторізація","en":"login","ru":"авторизация"},
     "weather":{"button":{"uk":"дізнатися погоду","en":"find out the weather","ru":"узнать погоду"}},
     "search":{

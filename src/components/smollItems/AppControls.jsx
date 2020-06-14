@@ -23,14 +23,14 @@ const AppControls = () => {
     >
       <Btn
         label={theme_selector.sand[currentLang]}
-        fhClick={() => dispatch({
+        fnClick={() => dispatch({
           type: 'SECONDARY_THEME',
         })}
         dark
       />
       <Btn
         label={theme_selector.ocean[currentLang]}
-        fhClick={() => dispatch({
+        fnClick={() => dispatch({
           type: 'MAIN_THEME',
         })}
         dark
