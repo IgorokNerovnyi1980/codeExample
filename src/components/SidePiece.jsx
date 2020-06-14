@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
     width:20%;
+    min-width:20rem;
     max-width:51.2rem;
     min-height:calc(100vh - 8rem);
     padding:${props => props.theme.mainPad};

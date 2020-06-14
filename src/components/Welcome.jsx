@@ -13,8 +13,12 @@ import welcomeData from '../lib/welcomeData.json'
 const Wrapper = styled.div`
   width:100%;
   height:100%;
+  min-height:calc(100vh - 10.4rem);
+  padding:2rem;
   color:${props => props.theme.greetingsBG};
   font-size:${props => props.theme.accentFZ};
+  border-radius:0.5rem;
+  box-shadow:${props => props.theme.darkSmollBottomShdw};
   h3{
       text-align:center;
       font-size:${props => props.theme.titleFZ};

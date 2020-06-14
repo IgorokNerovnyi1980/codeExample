@@ -10,6 +10,7 @@ const Wrapper = styled.div`
     border-radius:0.5rem;
     color:${props => props.theme.mainBG};
     background-color:${props => props.theme.darkColdBg};
+    box-shadow:${props => props.theme.darkSmollBottomShdw};
     display:flex;
     flex-direction:column;
     justify-content:${props => (props.flexJustify ? 'space-around' : 'flex-start')};

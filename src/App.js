@@ -8,9 +8,7 @@ import {
   useDispatch,
 } from 'react-redux'
 
-import {
-  baseTheme, secondaryTheme,
-} from './lib/themes'
+import themes from './lib/themes'
 import connectComponent from './redux/connectComponent'
 import Routing from './Routing'
 import Warning from './components/DumpComponents/Warning'
@@ -77,23 +75,32 @@ function App({
   currentTheme,
 }) {
   const dispatch = useDispatch()
-  const [myTheme, setMyTheme] = useState(baseTheme)
+  const [isRender, setIsRender] = useState(false)
 
   useEffect(() => {
-    switch (currentTheme) {
-      case 'base':
-        setMyTheme(baseTheme)
-        break
-      case 'secondary':
-        setMyTheme(secondaryTheme)
-        break
-      default:
-        setMyTheme(baseTheme)
+
+  }, [])
+
+  useEffect(() => {
+    const isHaveTheme = sessionStorage.getItem('currentTheme')
+    if (isHaveTheme) {
+      switch (isHaveTheme) {
+        case 'base':
+          dispatch({
+            type: 'MAIN_THEME',
+          })
+          break
+        case 'secondary':
+          dispatch({
+            type: 'SECONDARY_THEME',
+          })
+          break
+        default: dispatch({
+          type: 'MAIN_THEME',
+        })
+      }
     }
-  }, [currentTheme])
-
-  useEffect(() => {
-    const isHaveLang = localStorage.getItem('currentLang')
+    const isHaveLang = sessionStorage.getItem('currentLang')
     if (isHaveLang) {
       dispatch({
         type: 'CHANGE_LANG',
@@ -106,34 +113,41 @@ function App({
           type: 'CHANGE_LANG',
           payload: 'uk',
         })
-          localStorage.setItem('currentLang', 'uk')
+          sessionStorage.setItem('currentLang', 'uk')
           break
         case 'en': dispatch({
           type: 'CHANGE_LANG',
           payload: 'en',
         })
-          localStorage.setItem('currentLang', 'en')
+          sessionStorage.setItem('currentLang', 'en')
           break
         case 'ru': dispatch({
           type: 'CHANGE_LANG',
           payload: 'ru',
         })
-          localStorage.setItem('currentLang', 'ru')
+          sessionStorage.setItem('currentLang', 'ru')
           break
         default: dispatch({
           type: 'CHANGE_LANG',
           payload: 'en',
         })
-          localStorage.setItem('currentLang', 'en')
+          sessionStorage.setItem('currentLang', 'en')
       }
     }
-  }, [dispatch])
+    setIsRender(true)
+  }, [])
 
   return (
-    <ThemeProvider theme={myTheme}>
+    <ThemeProvider theme={themes[currentTheme]}>
       <GlobalStyle />
-      <Routing />
-      <Warning />
+      {isRender
+      && (
+      <>
+        <Routing />
+        <Warning />
+      </>
+      )}
+
     </ThemeProvider>
   )
 }

@@ -2,17 +2,22 @@ import {
   Bg, warmBg, coldBg, Fs, Shdw, other,
 } from './variables'
 
-export const baseTheme = {
+const base = {
   ...Bg,
   ...coldBg,
   ...Fs,
   ...Shdw,
   ...other,
 }
-export const secondaryTheme = {
+const secondary = {
   ...Bg,
   ...warmBg,
   ...Fs,
   ...Shdw,
   ...other,
+}
+
+export default {
+  base,
+  secondary,
 }

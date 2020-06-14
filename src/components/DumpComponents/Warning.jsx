@@ -13,13 +13,13 @@ const Wrapper = styled.div`
       position: fixed;
       top:${props => props.top};
       left:50%;
-      z-index:10;
+      z-index:3;
       transform:translateX(-50%);
       width:90%;
       max-width:36rem;
       min-height:5rem;
       padding:1rem;
-      background-color:${props => props.theme.accentBg};
+      background-color:${props => props.theme.lightHotBg};
       border:0.1rem solid ${props => props.theme.darkHotBg};
       border-radius:0.5rem;
       box-shadow:${props => props.theme.darkSmollBottomShdw};
@@ -38,7 +38,7 @@ const Wrapper = styled.div`
 const Warning = () => {
   const text = useSelector(state => state.warning.currentWarning)
   const dispatch = useDispatch()
-  const top = '-10%'
+  const top = '-20%'
 
   const handleClose = () => {
     dispatch({

@@ -16,6 +16,19 @@ const AppControls = () => {
     theme_selector,
   } = textData
 
+  const setBaseTheme = () => {
+    dispatch({
+      type: 'MAIN_THEME',
+    })
+    sessionStorage.setItem('currentTheme', 'base')
+  }
+  const setSecondaryTheme = () => {
+    dispatch({
+      type: 'SECONDARY_THEME',
+    })
+    sessionStorage.setItem('currentTheme', 'secondary')
+  }
+
   return (
     <SmollContainer
       height="30vh"
@@ -23,16 +36,12 @@ const AppControls = () => {
     >
       <Btn
         label={theme_selector.sand[currentLang]}
-        fnClick={() => dispatch({
-          type: 'SECONDARY_THEME',
-        })}
+        fnClick={setSecondaryTheme}
         dark
       />
       <Btn
         label={theme_selector.ocean[currentLang]}
-        fnClick={() => dispatch({
-          type: 'MAIN_THEME',
-        })}
+        fnClick={setBaseTheme}
         dark
       />
       <LangSelector />

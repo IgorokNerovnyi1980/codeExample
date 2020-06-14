@@ -67,7 +67,7 @@ const LangSelector = () => {
       type: 'CHANGE_LANG',
       payload: lang,
     })
-    localStorage.setItem('currentLang', lang)
+    sessionStorage.setItem('currentLang', lang)
     setIsShow(false)
   }
 

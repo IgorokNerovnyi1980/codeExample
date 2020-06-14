@@ -19,6 +19,7 @@ const Wrapper = styled.div`
     width:100%;
     height:8rem;
     padding:2.4rem;
+    z-index:2;
     background-color:${props => props.theme.darkColdBg};
     box-shadow:${props => props.theme.darkSmollBottomShdw};
     display:flex;
