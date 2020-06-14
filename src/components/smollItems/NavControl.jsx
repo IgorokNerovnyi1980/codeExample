@@ -8,22 +8,15 @@ import {
   NavLink, useLocation,
 } from 'react-router-dom'
 
-import textData from '../lib/textData.json'
+import textData from '../../lib/textData.json'
 
-const Wrapper = styled.nav`
-    min-width:10rem;
-    padding:${props => props.theme.mainPad};
-    border:0.1rem solid${props => props.theme.darkHotBg};
-    border-radius:0.1rem;
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-`
+import SmollContainer from './SmollContainer'
+
 const WrapLink = styled(NavLink)`
     text-decoration:${props => (props.current ? 'underline' : 'none')};
     outline:none;
-    margin-left:0.7rem;
-    color:${props => props.theme.greetingsBG};
+    padding:1rem;
+    color:${props => props.theme.mainBG};
     font-weight:600;
     transition:0.2s;
     transform:${props => (props.current ? 'scale(1.05)' : 'unset')};
@@ -41,7 +34,10 @@ const NavMenu = () => {
     nav_menu,
   } = textData
   return (
-    <Wrapper>
+    <SmollContainer
+      marginTop
+      flexJustify
+    >
       {nav_menu.list[currentLang].map(({
         label, rout,
       }) => (
@@ -54,7 +50,7 @@ const NavMenu = () => {
         </WrapLink>
       ))}
 
-    </Wrapper>
+    </SmollContainer>
   )
 }
 

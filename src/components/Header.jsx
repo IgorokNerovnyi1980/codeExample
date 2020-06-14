@@ -3,6 +3,9 @@ import styled from 'styled-components'
 import {
   useSelector,
 } from 'react-redux'
+import {
+  useLocation,
+} from 'react-router-dom'
 
 import textData from '../lib/textData.json'
 
@@ -27,14 +30,16 @@ const Wrapper = styled.div`
 
 const Header = () => {
   const {
+    pathname,
+  } = useLocation()
+  const {
     login, logo,
   } = textData
   const currentLang = useSelector(state => state.lang.currentLang)
-  const currentPage = useSelector(state => state.page.currentPage)
   return (
     <Wrapper>
       <Logo label={logo[currentLang]} />
-      {currentPage === 'news' ? <Search /> : <NavMenu />}
+      {pathname === '/news' ? <Search /> : <NavMenu />}
 
       <Button
         label={login[currentLang]}

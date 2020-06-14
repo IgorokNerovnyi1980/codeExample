@@ -5,19 +5,41 @@
     },
     "lang_list":["uk","en","ru"],
     "logo":{"uk":"ваш логотип","en":"your logo","ru":"ваш логотип"},
+    "development":{
+        "uk":"Сторінка в процесі створення, повернуться на головну сторінку",
+        "en":"Page in development, return to the main page",
+        "ru":"Страница в процессе создания, вернутся на главную страницу"
+    },
     "login":{"uk":"авторізація","en":"login","ru":"авторизация"},
+    "weather":{"button":{"uk":"дізнатися погоду","en":"find out the weather","ru":"узнать погоду"}},
     "search":{
         "button":{"uk":"знайти","en":"search","ru":"найти"},
         "placeholder":{"uk":"ваше ключове слово","en":"your keyWord","ru":"ваше ключевое слово"}
     },
     "right_side":{
-        "uk":"ще не вірішив, що буде в цьому блоці",
-        "en":"not yet decided what will be in this block",
-        "ru":"еще не решил, что будет в этом блоке"
+        "uk":"тут з'являються додаткові функції, доступні авторизованим користувачам",
+        "en":"additional features available to authorized users are displayed here",
+        "ru":"здесь отображаются дополнительные функции, доступные авторизированным пользователям"
     },
+    "autorization":{"please":{"uk":"будь ласка авторизуйтесь","en":"please log in","ru":"пожалуйста авторизируйтесь"}},
     "nav_menu":{
-        "test":{"uk":"меню","en":"nav menu","ru":"меню"},
-        "list":{"uk":[],"en":[],"ru":[]}
+        "list":{
+            "uk":[
+                {"label":"головна", "rout": "/home"},
+                {"label":"про мене","rout": "/about_me" },
+                {"label":"новини","rout": "/news" }
+            ],
+                "en":[
+                    {"label":"home", "rout": "/home"},
+                    {"label":"about me","rout": "/about_me" },
+                    {"label":"news","rout": "/news" }
+                ],
+                "ru":[
+                    {"label":"главная", "rout": "/home"},
+                    {"label":"обо мне","rout": "/about_me" },
+                    {"label":"новости","rout": "/news" }
+                ]
+                }
     }
 
 }

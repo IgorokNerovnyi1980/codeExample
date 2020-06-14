@@ -7,30 +7,32 @@ import connectComponent from '../redux/connectComponent'
 import SidePiece from '../components/SidePiece'
 import Center from '../components/Center'
 import AppControls from '../components/smollItems/AppControls'
-import UserControl from '../components/smollItems/UserControl'
-import Welcome from '../components/Welcome'
+import InDevelopment from '../components/DumpComponents/InDevelopment'
+import NavControl from '../components/smollItems/NavControl'
 import WeatherControl from '../components/smollItems/WeatherControl'
+import UserControl from '../components/smollItems/UserControl'
 
-const HomePage = ({
+const NewsPage = ({
   GetAllNews, newsList,
 }) => {
   useEffect(() => {
     GetAllNews()
-    console.log('newsList', newsList)// eslint-disable-line
-  }, [])// eslint-disable-line
+        console.log('newsList', newsList)// eslint-disable-line
+      }, [])// eslint-disable-line
   return (
     <BaseComponent>
       <SidePiece>
         <UserControl />
       </SidePiece>
       <Center>
-        <Welcome />
+        <InDevelopment />
       </Center>
       <SidePiece>
         <AppControls />
+        <NavControl />
         <WeatherControl />
       </SidePiece>
     </BaseComponent>
   )
 }
-export default connectComponent(HomePage)
+export default connectComponent(NewsPage)

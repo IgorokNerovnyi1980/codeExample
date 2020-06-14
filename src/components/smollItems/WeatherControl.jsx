@@ -7,36 +7,25 @@ import Btn from '../Button'
 import textData from '../../lib/textData.json'
 
 import SmollContainer from './SmollContainer'
-import LangSelector from './LangSelector'
 
-const AppControls = () => {
+const WeatherControl = () => {
   const dispatch = useDispatch()
   const currentLang = useSelector(state => state.lang.currentLang)
   const {
-    theme_selector,
+    weather,
   } = textData
 
   return (
     <SmollContainer
-      height="30vh"
       flexJustify
+      marginTop
     >
       <Btn
-        label={theme_selector.sand[currentLang]}
-        fhClick={() => dispatch({
-          type: 'SECONDARY_THEME',
-        })}
+        label={weather.button[currentLang]}
+        // fhClick={}
         dark
       />
-      <Btn
-        label={theme_selector.ocean[currentLang]}
-        fhClick={() => dispatch({
-          type: 'MAIN_THEME',
-        })}
-        dark
-      />
-      <LangSelector />
     </SmollContainer>
   )
 }
-export default AppControls
+export default WeatherControl

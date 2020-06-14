@@ -4,6 +4,8 @@ import {
 } from 'react-router-dom'
 
 import HomePage from './pages/HomePage'
+import AboutMePage from './pages/AboutMePage'
+import NewsPage from './pages/NewsPage'
 
 const Routing = () => (
   <Switch>
@@ -15,6 +17,14 @@ const Routing = () => (
     <Route
       path="/home"
       component={HomePage}
+    />
+    <Route
+      path="/about_me"
+      component={AboutMePage}
+    />
+    <Route
+      path="/news"
+      component={NewsPage}
     />
   </Switch>
 )

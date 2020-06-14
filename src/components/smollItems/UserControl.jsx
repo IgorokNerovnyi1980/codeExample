@@ -7,13 +7,12 @@ import Btn from '../Button'
 import textData from '../../lib/textData.json'
 
 import SmollContainer from './SmollContainer'
-import LangSelector from './LangSelector'
 
-const AppControls = () => {
+const UserControl = () => {
   const dispatch = useDispatch()
   const currentLang = useSelector(state => state.lang.currentLang)
   const {
-    theme_selector,
+    login, right_side,
   } = textData
 
   return (
@@ -21,22 +20,13 @@ const AppControls = () => {
       height="30vh"
       flexJustify
     >
+      <p>{right_side[currentLang]}</p>
       <Btn
-        label={theme_selector.sand[currentLang]}
-        fhClick={() => dispatch({
-          type: 'SECONDARY_THEME',
-        })}
+        label={login[currentLang]}
+        // fhClick={}
         dark
       />
-      <Btn
-        label={theme_selector.ocean[currentLang]}
-        fhClick={() => dispatch({
-          type: 'MAIN_THEME',
-        })}
-        dark
-      />
-      <LangSelector />
     </SmollContainer>
   )
 }
-export default AppControls
+export default UserControl

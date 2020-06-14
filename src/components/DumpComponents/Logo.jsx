@@ -1,5 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import {
+  Link,
+} from 'react-router-dom'
 
 import developer from '../../img/Developer.png'
 
@@ -15,6 +18,7 @@ const Wrapper = styled.div`
     background-size: cover;
     cursor:pointer;
     transition:0.2s;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     :hover{
         box-shadow:${props => props.theme.darkSmollBottomShdw};
     }
@@ -22,14 +26,16 @@ const Wrapper = styled.div`
         transform:scale(0.97);
     }
 `
+const WrapLink = styled(Link)`
+    text-decoration:none;
+    outline:none;
+    margin-left:0.5rem;
+`
 
-const Logo = () => {
-  const fnClick = () => {}
-  return (
-    <Wrapper
-      onClick={fnClick}
-    />
-  )
-}
+const Logo = () => (
+  <WrapLink to="/about_me">
+    <Wrapper />
+  </WrapLink>
+)
 
 export default Logo
