@@ -21,7 +21,7 @@ const NewsPage = ({
       }, [])// eslint-disable-line
   return (
     <BaseComponent>
-      <SidePiece>
+      <SidePiece left>
         <UserControl />
       </SidePiece>
       <Center>

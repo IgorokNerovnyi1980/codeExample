@@ -15,9 +15,11 @@ import SmollContainer from './SmollContainer'
 const WrapLink = styled(NavLink)`
     text-decoration:${props => (props.current ? 'underline' : 'none')};
     outline:none;
-    padding:1rem;
+    padding:${props => props.theme.mainPad};
+    border:0.1rem solid${props => props.theme.darkHotBg};
+    border-radius:0.1rem;
     color:${props => props.theme.mainBG};
-    font-weight:600;
+    font-weight:500;
     transition:0.2s;
     transform:${props => (props.current ? 'scale(1.05)' : 'unset')};
     :active{

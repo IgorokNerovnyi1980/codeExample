@@ -135,7 +135,7 @@ function App({
       }
     }
     setIsRender(true)
-  }, [])
+  }, [])// eslint-disable-line
 
   return (
     <ThemeProvider theme={themes[currentTheme]}>

@@ -27,6 +27,7 @@ export const warmBg = {
   lightColdBg: '#C2B076',
   darkColdBg: '#9E9061',
 }
+
 export const Fs = {
   titleFZ: '1.8em',
   mainFZ: '1em',

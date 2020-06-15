@@ -1,47 +1,47 @@
 {
-    "title":{"uk":"Вітаю !!", "en":"Greetings !!", "ru":"Приветствую!!"},
+    "title":{"uk":"вітаю !!", "en":"greetings !!", "ru":"приветствую!!"},
     "first_article":{
-        "uk":"Мене звуть Ігор і цей сайт зробив я, для презентації своїх навичок Frontend розробника. Функціонал і можливості програми будуть оновлюватися і змінюватися. Тому, деякі фічі описані нижче не будуть представлені - сорян)). Додаток не має серверної частини, тому вся інформація кешується в sessionStorage.",
-        "en":"My name is Igor and I made this website to present my Frontend developer skills. The functionality and capabilities of the application will be updated and changed. Therefore, some features described below will not be presented - sorry)). The application does not have a server part, so all information is cached in sessionStorage.",
-        "ru":"Меня зовут Игорь и этот сайт сделал я, для презентации своих навыков Frontend разработчика. Функционал и возможности приложения будут обновляться и изменяться. Поэтому, некоторые фичи описанные ниже не будут представлены – сорян)). Приложение не имеет серверной части, поэтому вся информация кэшируется в sessionStorage."
+        "uk":"моє ім'я Ігор, цей сайт я зробив для презентації своїх навичок Frontend розробника. функціонал і можливості додатку будуть оновлюватися і змінюватися. тому, деякі фічі описані нижче не будуть представлені - сорян)). додаток не має серверної частини, тому вся інформація кешується в sessionStorage.",
+        "en":"my name is Igor, I made this website to present my Frontend developer skills. the functionality and capabilities of the application will be updated and changed. therefore, some features described below will not be presented - sorry)). the application does not have a server part, so all information is cached in sessionStorage.",
+        "ru":"меня зовут Игорь, этот сайт я сделал для презентации своих навыков Frontend разработчика. функционал и возможности приложения будут обновляться и изменяться. поэтому, некоторые фичи описанные ниже не будут представлены – сорян)). приложение не имеет серверной части, поэтому вся информация кэшируется в sessionStorage."
     },
     "second_article":{
-        "uk":"На сторінці AboutMe присутня контактна інформація.",
+        "uk":"на сторінці AboutMe присутня контактна інформація.",
         "en":"AboutMe page contains contact information.",
-        "ru":"На страничке AboutMe присутствует контактная информация."
+        "ru":"на страничке AboutMe присутствует контактная информация."
     },
     "finally_article":{
-        "uk":"На цьому все. До зустрічі!",
-        "en":"That's all. See you!",
-        "ru":"На этом все. До встречи!"
+        "uk":"маю надію що вам сподобається. до зустрічі!",
+        "en":"I hope you will like this. see you!",
+        "ru":"надеюсь вам понравится. до встречи!"
     },
     "description":{
         "title":{
-            "uk":"Про можливості програми:",
-            "en":"About the features of the application:",
-            "ru":"О возможностях приложения:"
+            "uk":"про можливості програми:",
+            "en":"about the features of the application:",
+            "ru":"о возможностях приложения:"
         },
         "list":{
             "uk":[
-                "Зміна колірної теми",
+                "міна колірної теми",
                 "Вибір мови",
-                "Прогноз погоди для вашої локації",
-                "Авторизація",
-                "Особистий кабінет"
+                "прогноз погоди для вашої локації",
+                "авторизація",
+                "особистий кабінет"
             ],
             "en":[
-                "Change the color theme",
-                "Language Selection",
-                "Weather forecast for your location",
-                "Authorization",
-                "Personal Area"
+                "change the color theme",
+                "language selection",
+                "weather forecast for your location",
+                "authorization",
+                "personal area"
             ],
             "ru":[
-                "Изменение цветовой темы",
-                "Выбор языка",
-                "Прогноз погоды для вашей локации",
-                "Авторизация",
-                "Личный кабинет"
+                "изменение цветовой темы",
+                "выбор языка",
+                "прогноз погоды для вашей локации",
+                "авторизация",
+                "личный кабинет"
             ]
         }
     }

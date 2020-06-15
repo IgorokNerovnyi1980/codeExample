@@ -18,7 +18,7 @@ const Wrapper = styled.div`
     left:0;
     width:100%;
     height:8rem;
-    padding:2.4rem;
+    padding:${props => props.pagging};
     z-index:2;
     background-color:${props => props.theme.darkColdBg};
     box-shadow:${props => props.theme.darkSmollBottomShdw};
@@ -38,7 +38,7 @@ const Header = ({
   } = textData
 
   return (
-    <Wrapper>
+    <Wrapper pagging="2.4rem 0.5rem">
       <Logo label={logo[currentLang]} />
       {pathname === '/news' ? <Search /> : <NavMenu />}
       <Button

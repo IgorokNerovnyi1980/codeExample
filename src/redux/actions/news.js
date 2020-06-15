@@ -12,16 +12,16 @@ export const getTestData = () => (dispatch) => {
 
 export const GetAllNews = (
   lang = 'us',
-) => async (dispatch) => {
+) => async (dispatch) => {//eslint-disable-line
   try {
     const {
-      data, status, response,
+      data, status, response,//eslint-disable-line
     } = await api.get(
 
       `/latest-news?language=${lang}&apiKey=${newsApi.key}`,
     )
     console.log('data', data)//eslint-disable-line
-    console.log('response', response)
+    console.log('response', response)//eslint-disable-line
     // if (status === 'ok') {
     //   dispatch({
     //     type: Type.GET_ALL_NEWS,

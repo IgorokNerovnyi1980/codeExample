@@ -12,9 +12,6 @@ import textData from '../lib/textData.json'
 
 const Wrapper = styled.nav`
     min-width:10rem;
-    padding:${props => props.theme.mainPad};
-    border:0.1rem solid${props => props.theme.darkHotBg};
-    border-radius:0.1rem;
     display:flex;
     justify-content:space-around;
     align-items:center;
@@ -23,8 +20,13 @@ const WrapLink = styled(NavLink)`
     text-decoration:${props => (props.current ? 'underline' : 'none')};
     outline:none;
     margin-left:0.7rem;
-    color:${props => props.theme.greetingsBG};
-    font-weight:600;
+    padding:${props => props.theme.mainPad};
+    border:0.1rem solid${props => props.theme.darkHotBg};
+    border-radius:0.1rem;
+    color:${({
+    theme, current,
+  }) => (current ? theme.accentBg : theme.mainBG)};
+    font-weight:500;
     transition:0.2s;
     transform:${props => (props.current ? 'scale(1.05)' : 'unset')};
     :active{
