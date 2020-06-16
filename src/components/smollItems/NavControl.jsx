@@ -13,6 +13,7 @@ import textData from '../../lib/textData.json'
 import SmollContainer from './SmollContainer'
 
 const WrapLink = styled(NavLink)`
+    min-width:10rem;
     text-decoration:${props => (props.current ? 'underline' : 'none')};
     outline:none;
     padding:${props => props.theme.mainPad};
@@ -20,6 +21,9 @@ const WrapLink = styled(NavLink)`
     border-radius:0.1rem;
     color:${props => props.theme.mainBG};
     font-weight:500;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     transition:0.2s;
     transform:${props => (props.current ? 'scale(1.05)' : 'unset')};
     :active{

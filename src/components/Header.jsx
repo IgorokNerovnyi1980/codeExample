@@ -3,12 +3,14 @@ import styled from 'styled-components'
 import {
   useLocation,
 } from 'react-router-dom'
+import Media from 'react-media'
 
 import connectComponent from '../redux/connectComponent'
 import textData from '../lib/textData.json'
 
 import Button from './Button'
 import NavMenu from './NavMenu'
+import MobileNavMenu from './smollItems/MobileNavControl'
 import Logo from './DumpComponents/Logo'
 import Search from './smollItems/Search'
 
@@ -38,15 +40,33 @@ const Header = ({
   } = textData
 
   return (
-    <Wrapper pagging="2.4rem 0.5rem">
-      <Logo label={logo[currentLang]} />
-      {pathname === '/news' ? <Search /> : <NavMenu />}
-      <Button
-        label={login[currentLang]}
-        fnClick={() => baseWarning('in development', currentLang)}
-        dark
-      />
-    </Wrapper>
+    <Media query={{
+      maxWidth: 900,
+    }}
+    >
+      {matches => (matches ? (
+        <Wrapper pagging="2.4rem 0.5rem">
+          <Logo label={logo[currentLang]} />
+          {pathname === '/news' ? <Search /> : <MobileNavMenu />}
+          <Button
+            label={login[currentLang]}
+            fnClick={() => baseWarning('in development', currentLang)}
+            dark
+          />
+        </Wrapper>
+      ) : (
+        <Wrapper pagging="2.4rem ">
+          <Logo label={logo[currentLang]} />
+          {pathname === '/news' ? <Search /> : <NavMenu />}
+          <Button
+            label={login[currentLang]}
+            fnClick={() => baseWarning('in development', currentLang)}
+            dark
+          />
+        </Wrapper>
+      ))}
+
+    </Media>
   )
 }
 

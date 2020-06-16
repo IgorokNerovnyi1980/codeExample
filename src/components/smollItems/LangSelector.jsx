@@ -78,7 +78,7 @@ const LangSelector = () => {
   useEffect(() => {
     window.addEventListener('click', handleMouseClick)
     return () => window.removeEventListener('click', handleMouseClick)
-  }, [])
+  })
 
   return (
     <Wrapper>

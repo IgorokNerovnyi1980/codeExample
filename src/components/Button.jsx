@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.button`
+    min-width:${props => props.minWidth};
     padding:1rem 2rem;
     border:0.1rem solid${props => props.theme.darkHotBg};
     border-radius:0.1rem;
@@ -24,10 +25,12 @@ const Button = ({
   fnClick = () => { },
   type = 'button',
   dark = false,
+  minWidth = '0',
 }) => (
   <Wrapper
     dark={dark}
     type={type}
+    minWidth={minWidth}
     onClick={fnClick}
   >
     {label}

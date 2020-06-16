@@ -13,7 +13,6 @@ import textData from '../../lib/textData.json'
 const Background = styled.div`
   width:100%;
   height:100%;
-  min-height:calc(100vh - 10.4rem);
   padding:${props => props.theme.mainPad};
   box-shadow:${props => props.theme.darkSmollBottomShdw};
   display:flex;
@@ -29,9 +28,6 @@ const Wrapper = styled(NavLink)`
   cursor:pointer;
   transition:0.2s;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  /* :hover{
-      box-shadow:${props => props.theme.darkSmollBottomShdw};
-  } */
   :active{
       transform:scale(0.97);
   }
