@@ -1,5 +1,5 @@
 export {
-  GetAllNews,
+  GetLastNews, SearchNews,
 } from './news'
 
 export {

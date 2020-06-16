@@ -50,7 +50,7 @@ const NavMenu = () => {
         <WrapLink
           to={rout}
           key={shortid.generate()}
-          current={pathname === rout}
+          current={(pathname === rout) ? true : false}//eslint-disable-line
         >
           {label}
         </WrapLink>

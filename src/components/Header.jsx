@@ -1,4 +1,6 @@
-import React from 'react'
+import React, {
+  useState,
+} from 'react'
 import styled from 'styled-components'
 import {
   useLocation,
@@ -30,7 +32,7 @@ const Wrapper = styled.div`
 `
 
 const Header = ({
-  baseWarning, currentLang,
+  baseWarning, currentLang, SearchNews,
 }) => {
   const {
     pathname,
@@ -38,6 +40,16 @@ const Header = ({
   const {
     login, logo,
   } = textData
+  const [userWord, setUserWord] = useState('')
+
+  const getMySearch = () => {
+    SearchNews({
+      key: userWord,
+    })
+  }
+  const changeInput = (e) => {
+    setUserWord(e.target.value)
+  }
 
   return (
     <Media query={{
@@ -47,7 +59,13 @@ const Header = ({
       {matches => (matches ? (
         <Wrapper pagging="2.4rem 0.5rem">
           <Logo label={logo[currentLang]} />
-          {pathname === '/news' ? <Search /> : <MobileNavMenu />}
+          {pathname === '/news' ? (
+            <Search
+              fnChange={changeInput}
+              fnSubmit={getMySearch}
+              value={userWord}
+            />
+          ) : <MobileNavMenu />}
           <Button
             label={login[currentLang]}
             fnClick={() => baseWarning('in development', currentLang)}

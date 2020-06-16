@@ -31,7 +31,7 @@ const Wrapper = styled.div`
 const WrapLink = styled(NavLink)`
     text-decoration:${props => (props.current ? 'underline' : 'none')};
     outline:none;
-    min-width:10rem;
+    min-width:12rem;
     padding:${props => props.theme.mainPad};
     border:0.1rem solid${props => props.theme.darkHotBg};
     border-radius:0.1rem;
@@ -89,7 +89,7 @@ const MobileNavMenu = () => {
           <WrapLink
             to={rout}
             key={shortid.generate()}
-            current={pathname === rout}
+            current={(pathname === rout) ? true : false}//eslint-disable-line
             ref={listRef}
           >
             {label}

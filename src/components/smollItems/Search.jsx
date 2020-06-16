@@ -27,6 +27,8 @@ const Wrapper = styled.div`
 
 const Search = ({
   fnChange = () => { },
+  fnSubmit = () => { },
+  value,
 }) => {
   const currentLang = useSelector(state => state.lang.currentLang)
   const {
@@ -36,13 +38,16 @@ const Search = ({
     <Wrapper>
       <input
         type="text"
-        value=""
+        name="search"
+        value={value}
         placeholder={search.placeholder[currentLang]}
         onChange={fnChange}
       />
       <Button
         label={search.button[currentLang]}
+        fnClick={fnSubmit}
         dark
+
       />
 
     </Wrapper>

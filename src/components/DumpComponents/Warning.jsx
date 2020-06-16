@@ -30,8 +30,10 @@ const Wrapper = styled.div`
       align-items:center;
       cursor:pointer;
       transition:0.5s;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       p{
         text-align:center;
+        
       }
   `
 
@@ -71,7 +73,7 @@ const Warning = () => {
 
   return (
     <Transition
-      in={text}
+      in={Boolean(text)}
       timeout={400}
       onEnter={onListOpen}
       onExit={onListClose}

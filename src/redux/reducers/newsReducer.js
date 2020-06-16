@@ -10,7 +10,7 @@ const reducer = (state = initialState, action) => {
     case Type.GET_ALL_NEWS:
       return {
         ...state,
-        test: action.payload,
+        newsList: action.payload,
       }
     default:
       return state

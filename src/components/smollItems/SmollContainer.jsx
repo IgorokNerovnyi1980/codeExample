@@ -5,7 +5,7 @@ const Wrapper = styled.div`
     width:90%;
     margin-top:${props => (props.marginTop ? '1rem' : 'unset')};
     height:${props => props.height};
-    min-height:18rem;
+    min-height:17rem;
     padding:${props => props.theme.mainPad};
     border-radius:0.5rem;
     color:${props => props.theme.greetingsBG};

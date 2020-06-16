@@ -3,32 +3,58 @@ import {
 } from '../../lib/constants'
 import Type from '../types'
 
-export const getTestData = () => (dispatch) => {
-  dispatch({
-    type: Type.GET_TEST,
-    payload: 'update data in store',
-  })
-}
-
-export const GetAllNews = (
-  lang = 'us',
-) => async (dispatch) => {//eslint-disable-line
+export const GetLastNews = (cantry = 'us') => async (dispatch) => {
+  if (newsApi.key) {
+    api.defaults.headers.common['X-Api-Key'] = newsApi.key
+  }
   try {
     const {
-      data, status, response,//eslint-disable-line
+      data, status,
     } = await api.get(
-
-      `/latest-news?language=${lang}&apiKey=${newsApi.key}`,
+      `/top-headlines?country=${cantry}`,
     )
-    console.log('data', data)//eslint-disable-line
-    console.log('response', response)//eslint-disable-line
-    // if (status === 'ok') {
-    //   dispatch({
-    //     type: Type.GET_ALL_NEWS,
-    //     payload: data.articles,
-    //   })
-    // }
+    if (status === 'ok' || status === 200) {
+      dispatch({
+        type: Type.GET_ALL_NEWS,
+        payload: data.articles,
+      })
+    }
   } catch (err) {
-      console.warn('err in test request', err)//eslint-disable-line
+    dispatch({
+      type: 'SHOW_WARNING',
+      payload: err.message,
+    })
   }
 }
+
+export const SearchNews = ({
+  key,
+}) => async (dispatch) => {
+  if (newsApi.key) {
+    api.defaults.headers.common['X-Api-Key'] = newsApi.key
+  }
+  // dispatch({
+  //   type: Type.GET_ALL_NEWS,
+  //   payload: null,
+  // })
+  try {
+    const {
+      data, status,
+    } = await api.get(
+      `/everything?q=${key}`,
+    )
+    if (status === 'ok' || status === 200) {
+      dispatch({
+        type: Type.GET_ALL_NEWS,
+        payload: data.articles,
+      })
+    }
+  } catch (err) {
+    dispatch({
+      type: 'SHOW_WARNING',
+      payload: err.message,
+    })
+  }
+}
+
+//

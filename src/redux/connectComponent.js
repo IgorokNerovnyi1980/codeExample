@@ -4,7 +4,7 @@ import {
 } from 'react-redux'
 
 import {
-  GetAllNews, baseWarning,
+  GetLastNews, SearchNews, baseWarning,
 } from './actions/index'
 
 const mapSTP = ({
@@ -18,7 +18,8 @@ const mapSTP = ({
 export default Page => connect(
   mapSTP,
   {
-    GetAllNews,
+    GetLastNews,
+    SearchNews,
     baseWarning,
   },
 )(Page)
