@@ -11,26 +11,18 @@ import UserControl from '../components/smollItems/UserControl'
 import Welcome from '../components/Welcome'
 import WeatherControl from '../components/smollItems/WeatherControl'
 
-const HomePage = ({
-  GetAllNews, newsList,
-}) => {
-  useEffect(() => {
-    GetAllNews()
-    console.log('newsList', newsList)// eslint-disable-line
-  }, [])// eslint-disable-line
-  return (
-    <BaseComponent>
-      <SidePiece left>
-        <UserControl />
-      </SidePiece>
-      <Center>
-        <Welcome />
-      </Center>
-      <SidePiece>
-        <AppControls />
-        <WeatherControl />
-      </SidePiece>
-    </BaseComponent>
-  )
-}
+const HomePage = () => (
+  <BaseComponent>
+    <SidePiece left>
+      <UserControl />
+    </SidePiece>
+    <Center>
+      <Welcome />
+    </Center>
+    <SidePiece>
+      <AppControls />
+      <WeatherControl />
+    </SidePiece>
+  </BaseComponent>
+)
 export default connectComponent(HomePage)
