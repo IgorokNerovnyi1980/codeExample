@@ -19,6 +19,7 @@ const NewsPage = ({
     GetAllNews()
         console.log('newsList', newsList)// eslint-disable-line
       }, [])// eslint-disable-line
+
   return (
     <BaseComponent>
       <SidePiece left>

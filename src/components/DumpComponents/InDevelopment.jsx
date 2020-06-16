@@ -23,7 +23,7 @@ const Background = styled.div`
 const Wrapper = styled(NavLink)`
   text-decoration:none;
   outline:none;
-  width:90%;
+  width:95%;
   min-width:32rem;
   max-width:80rem;
   cursor:pointer;
