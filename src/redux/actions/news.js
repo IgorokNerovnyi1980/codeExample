@@ -4,14 +4,15 @@ import {
 import Type from '../types'
 
 export const GetLastNews = (cantry = 'us') => async (dispatch) => {
-  // if (newsApi.key) {
-  //   api.defaults.headers.common['X-Api-Key'] = newsApi.key
-  // }
+  // &apiKey=${newsApi.key}
+  if (newsApi.key) {
+    api.defaults.headers.common['X-Api-Key'] = newsApi.key
+  }
   try {
     const {
       data, status,
     } = await api.get(
-      `/top-headlines?country=${cantry}&apiKey=${newsApi.key}`,
+      `/top-headlines?country=${cantry}`,
     )
     if (status === 'ok' || status === 200) {
       dispatch({

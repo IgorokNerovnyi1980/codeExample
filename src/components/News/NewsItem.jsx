@@ -45,7 +45,7 @@ const NewsItem = ({
     <a
       href={news.url}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
     >
       link
 
