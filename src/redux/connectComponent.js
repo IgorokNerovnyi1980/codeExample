@@ -4,15 +4,16 @@ import {
 } from 'react-redux'
 
 import {
-  GetLastNews, SearchNews, baseWarning,
+  GetLastNews, SearchNews, baseWarning, getCurrentWeather,
 } from './actions/index'
 
 const mapSTP = ({
-  news, theme, lang,
+  news, theme, lang, weather,
 }) => ({
   newsList: news.newsList,
   currentTheme: theme.currentTheme,
   currentLang: lang.currentLang,
+  currentWeather: weather.currentWeather,
 })
 
 export default Page => connect(
@@ -21,5 +22,6 @@ export default Page => connect(
     GetLastNews,
     SearchNews,
     baseWarning,
+    getCurrentWeather,
   },
 )(Page)

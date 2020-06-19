@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-    width:90%;
+    width:100%;
     min-height:10rem;
     margin-bottom:1rem;
     padding:${props => props.theme.mainPad};
     border-radius:0.5rem;
-    box-shadow:${props => props.theme.boxShadow};
+    box-shadow:${props => props.theme.darkBigBottomShdw};
     color:${props => props.theme.greetingsBG};
     .autor{
       color:${props => props.theme.lightHotBg};

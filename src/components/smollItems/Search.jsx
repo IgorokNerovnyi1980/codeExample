@@ -7,7 +7,7 @@ import {
 import textData from '../../lib/textData.json'
 import Button from '../Button'
 
-const Wrapper = styled.div`
+const Wrapper = styled.form`
     width:50%;
     min-width:15rem;
     max-width:25rem;
@@ -35,7 +35,7 @@ const Search = ({
     search,
   } = textData
   return (
-    <Wrapper>
+    <Wrapper onSubmit={fnSubmit}>
       <input
         type="text"
         name="search"
@@ -45,9 +45,8 @@ const Search = ({
       />
       <Button
         label={search.button[currentLang]}
-        fnClick={fnSubmit}
+        type="submit"
         dark
-
       />
 
     </Wrapper>

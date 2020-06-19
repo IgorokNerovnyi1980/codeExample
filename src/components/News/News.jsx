@@ -13,13 +13,20 @@ const Background = styled.div`
   align-items:center;
 `
 const Wrapper = styled.div`
-  width:95%;
+  width:98%;
   min-width:32rem;
   max-width:80rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:center;
   transition:0.2s;
   @media (min-width: 901px) {
     height:calc(100vh - 12rem);
+    width:95%;
     overflow:auto;
+    display:block;
+    
     }
 `
 const News = ({

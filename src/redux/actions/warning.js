@@ -1,18 +1,22 @@
 import textData from '../../lib/textData.json'
 
 const {
-  development,
+  development, weather,
 } = textData
 
 export const baseWarning = (text, lang) => (dispatch) => {
-  if (text === 'in development') {
-    return dispatch({
+  switch (text) {
+    case 'in development': return dispatch({
       type: 'SHOW_WARNING',
       payload: development.button[lang],
     })
+    case 'in weather': return dispatch({
+      type: 'SHOW_WARNING',
+      payload: weather.not_coords[lang],
+    })
+    default: return dispatch({
+      type: 'SHOW_WARNING',
+      payload: text,
+    })
   }
-  return dispatch({
-    type: 'SHOW_WARNING',
-    payload: text,
-  })
 }

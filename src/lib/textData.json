@@ -5,18 +5,38 @@
     },
     "lang_list":["uk","en","ru"],
     "logo":{"uk":"ваш логотип","en":"your logo","ru":"ваш логотип"},
-    "development":{"page":{
+    "development":{
+        "page":{
         "uk":"код на стадіі створення, [click] щоб повернутися на головну сторінку",
         "en":"the code will make, [click] for return to the main page",
         "ru":"код в процессе создания, [click] чтоб вернутся на главную страницу"
+        },
+        "button":{
+            "uk":"розділ в розробці",
+            "en":"section in development",
+            "ru":"раздел в разработке"
+        }
     },
-"button":{
-    "uk":"розділ в розробці",
-    "en":"section in development",
-    "ru":"раздел в разработке"
-}},
     "login":{"uk":"авторізація","en":"login","ru":"авторизация"},
-    "weather":{"button":{"uk":"дізнатися погоду","en":"find out the weather","ru":"узнать погоду"}},
+    "weather":{
+        "button":{
+                "get":{
+                    "uk":"дізнатися погоду",
+                    "en":"find out the weather",
+                    "ru":"узнать погоду"
+                },
+                "update":{
+                    "uk":"обновити погоду",
+                    "en":"update the weather",
+                    "ru":"обновить погоду"
+                }
+        },
+        "not_coords":{
+            "uk":"не зміг отримати ваші координати",
+            "en":"could not get your coordinates",
+            "ru":"не удалось получить ваши координаты"
+        }
+    },
     "search":{
         "button":{"uk":"знайти","en":"search","ru":"найти"},
         "placeholder":{"uk":"ваше ключове слово","en":"your keyWord","ru":"ваше ключевое слово"}

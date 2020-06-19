@@ -1,17 +1,14 @@
 import {
-  api, newsApi,
+  newsAccess, newsApi,
 } from '../../lib/constants'
 import Type from '../types'
 
 export const GetLastNews = (cantry = 'us') => async (dispatch) => {
-  // if (newsApi.key) {
-  //   api.defaults.headers.common['X-Api-Key'] = newsApi.key
-  // }
   try {
     const {
       data, status,
-    } = await api.get(
-      `/top-headlines?country=${cantry}&apiKey=${newsApi.key}`,
+    } = await newsApi.get(
+      `/top-headlines?country=${cantry}&apiKey=${newsAccess.key}`,
     )
     if (status === 'ok' || status === 200) {
       dispatch({
@@ -30,18 +27,11 @@ export const GetLastNews = (cantry = 'us') => async (dispatch) => {
 export const SearchNews = ({
   key,
 }) => async (dispatch) => {
-  // if (newsApi.key) {
-  //   api.defaults.headers.common['X-Api-Key'] = newsApi.key
-  // }
-  // dispatch({
-  //   type: Type.GET_ALL_NEWS,
-  //   payload: null,
-  // })
   try {
     const {
       data, status,
-    } = await api.get(
-      `/everything?q=${key}&apiKey=${newsApi.key}`,
+    } = await newsApi.get(
+      `/everything?q=${key}&apiKey=${newsAccess.key}`,
     )
     if (status === 'ok' || status === 200) {
       dispatch({

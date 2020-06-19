@@ -42,7 +42,8 @@ const Header = ({
   } = textData
   const [userWord, setUserWord] = useState('')
 
-  const getMySearch = () => {
+  const getMySearch = (e) => {
+    e.preventDefault()
     SearchNews({
       key: userWord,
     })
@@ -75,7 +76,13 @@ const Header = ({
       ) : (
         <Wrapper pagging="2.4rem ">
           <Logo label={logo[currentLang]} />
-          {pathname === '/news' ? <Search /> : <NavMenu />}
+          {pathname === '/news' ? (
+            <Search
+              fnChange={changeInput}
+              fnSubmit={getMySearch}
+              value={userWord}
+            />
+          ) : <NavMenu />}
           <Button
             label={login[currentLang]}
             fnClick={() => baseWarning('in development', currentLang)}

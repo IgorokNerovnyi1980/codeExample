@@ -5,3 +5,7 @@ export {
 export {
   baseWarning,
 } from './warning'
+
+export {
+  getCurrentWeather,
+} from './weather'
