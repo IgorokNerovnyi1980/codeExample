@@ -8,7 +8,7 @@ export const newsAccess = {
 
 export const weatherAccess = {
   key: 'caaf7cee5e9b75b5c23bef506ab921cd',
-  url: 'http://api.weatherstack.com',
+  url: 'https://api.weatherstack.com',
 }
 
 export const weatherApi = axios.create({
