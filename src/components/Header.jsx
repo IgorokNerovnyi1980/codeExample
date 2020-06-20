@@ -1,10 +1,11 @@
 import React, {
   useState,
 } from 'react'
-import styled from 'styled-components'
 import {
+  useHistory,
   useLocation,
 } from 'react-router-dom'
+import styled from 'styled-components'
 import Media from 'react-media'
 
 import connectComponent from '../redux/connectComponent'
@@ -32,8 +33,9 @@ const Wrapper = styled.div`
 `
 
 const Header = ({
-  baseWarning, currentLang, SearchNews,
+  currentLang, SearchNews, // baseWarning,
 }) => {
+  const history = useHistory()
   const {
     pathname,
   } = useLocation()
@@ -69,7 +71,7 @@ const Header = ({
           ) : <MobileNavMenu />}
           <Button
             label={login[currentLang]}
-            fnClick={() => baseWarning('in development', currentLang)}
+            fnClick={() => { history.push('/user') }}
             dark
           />
         </Wrapper>
@@ -85,7 +87,7 @@ const Header = ({
           ) : <NavMenu />}
           <Button
             label={login[currentLang]}
-            fnClick={() => baseWarning('in development', currentLang)}
+            fnClick={() => { history.push('/user') }}
             dark
           />
         </Wrapper>

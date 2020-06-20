@@ -16,6 +16,7 @@ const Content = styled.div`
   align-items:flex-start;
   background-color:${props => props.theme.lightColdBg};
 `
+
 const BaseComponent = ({
   children,
 }) => (

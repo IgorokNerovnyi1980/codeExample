@@ -1,4 +1,6 @@
-import React from 'react'
+import React, {
+  forwardRef,
+} from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.button`
@@ -17,26 +19,37 @@ const Wrapper = styled.button`
     :active{
       
         transform:scale(0.97);
+       
     }
+    :disabled{
+      background-color:${props => props.theme.lightHotBg};
+      :hover{
+        box-shadow:unset;
+        cursor:default;
+    }
+  }
 `
 
-const Button = ({
+const Button = forwardRef(({
   label = 'default',
   fnClick = () => { },
   type = 'button',
   dark = false,
   minWidth = '0',
-}) => (
+  disable = false,
+}, ref) => (
   <Wrapper
     dark={dark}
     type={type}
     minWidth={minWidth}
     onClick={fnClick}
+    ref={ref}
+    disabled={disable}
   >
     {label}
 
   </Wrapper>
 
-)
+))
 
 export default Button

@@ -18,3 +18,8 @@ export const weatherApi = axios.create({
 export const newsApi = axios.create({
   baseURL: newsAccess.url,
 })
+
+export const AutorizationData = {
+  login: 'new User',
+  password: '123W45',
+}

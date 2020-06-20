@@ -27,7 +27,7 @@ const WeatherControl = ({
         long: longitude,
       })
     }
-    const onError = () => baseWarning('Ошибка при определении положения')
+    const onError = () => baseWarning('in geolocation', currentLang)
 
     navigator.geolocation.getCurrentPosition(onSuccess, onError)
   }, []) //eslint-disable-line

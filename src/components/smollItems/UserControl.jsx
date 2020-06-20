@@ -1,4 +1,7 @@
 import React from 'react'
+import {
+  useHistory,
+} from 'react-router-dom'
 
 import connectComponent from '../../redux/connectComponent'
 import Btn from '../Button'
@@ -7,8 +10,9 @@ import textData from '../../lib/textData.json'
 import SmollContainer from './SmollContainer'
 
 const UserControl = ({
-  currentLang, baseWarning,
+  currentLang,
 }) => {
+  const history = useHistory()
   const {
     login, right_side,
   } = textData
@@ -21,7 +25,7 @@ const UserControl = ({
       <p>{right_side[currentLang]}</p>
       <Btn
         label={login[currentLang]}
-        fnClick={() => baseWarning('in development', currentLang)}
+        fnClick={() => { history.push('/user') }}
         dark
       />
     </SmollContainer>

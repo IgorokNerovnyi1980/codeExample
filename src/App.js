@@ -12,6 +12,7 @@ import themes from './lib/themes'
 import connectComponent from './redux/connectComponent'
 import Routing from './Routing'
 import Warning from './components/DumpComponents/Warning'
+import Modal from './components/DumpComponents/Modal'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -72,10 +73,11 @@ const GlobalStyle = createGlobalStyle`
 `
 
 function App({
-  currentTheme,
+  currentTheme, modalStatus, modalChildren,
 }) {
   const dispatch = useDispatch()
   const [isRender, setIsRender] = useState(false)
+  const [children, setChildren] = useState(null)
 
   useEffect(() => {
 
@@ -137,6 +139,14 @@ function App({
     setIsRender(true)
   }, [])// eslint-disable-line
 
+  useEffect(() => {
+    if (modalChildren) {
+      switch (modalChildren) {
+        default: setChildren(null)
+      }
+    }
+  }, [modalChildren, modalStatus])
+
   return (
     <ThemeProvider theme={themes[currentTheme]}>
       <GlobalStyle />
@@ -145,6 +155,11 @@ function App({
       <>
         <Routing />
         <Warning />
+        {modalStatus && (
+        <Modal>
+          {children}
+        </Modal>
+        )}
       </>
       )}
 

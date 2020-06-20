@@ -33,6 +33,7 @@ const NewsPage = ({
         <WeatherControl />
       </SidePiece>
     </BaseComponent>
+
   )
 }
 export default connectComponent(NewsPage)
