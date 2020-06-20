@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage'
 import AboutMePage from './pages/AboutMePage'
 import NewsPage from './pages/NewsPage'
 import UserPage from './pages/UserPage'
+import TestPage from './pages/TestPage'
 
 const Routing = () => (
   <Switch>
@@ -30,6 +31,10 @@ const Routing = () => (
     <Route
       path="/news"
       component={NewsPage}
+    />
+    <Route
+      path="/test"
+      component={TestPage}
     />
   </Switch>
 )
