@@ -80,10 +80,6 @@ function App({
   const [children, setChildren] = useState(null)
 
   useEffect(() => {
-
-  }, [])
-
-  useEffect(() => {
     const isHaveTheme = sessionStorage.getItem('currentTheme')
     if (isHaveTheme) {
       switch (isHaveTheme) {
@@ -137,6 +133,15 @@ function App({
       }
     }
     setIsRender(true)
+  }, [])// eslint-disable-line
+
+  useEffect(() => {
+    const isHaveAccess = JSON.parse(sessionStorage.getItem('isLogin'))
+    if (isHaveAccess) {
+      dispatch({
+        type: 'LOGIN',
+      })
+    }
   }, [])// eslint-disable-line
 
   useEffect(() => {

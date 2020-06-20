@@ -2,16 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import shortid from 'shortid'
 
+import CenterLayout from '../DumpComponents/CenterLayout'
+
 import NewsItem from './NewsItem'
 
-const Background = styled.div`
-  width:100%;
-  padding:${props => props.theme.mainPad};
-  box-shadow:${props => props.theme.darkSmollBottomShdw};
-  display:flex;
-  justify-content:center;
-  align-items:center;
-`
 const Wrapper = styled.div`
   width:98%;
   min-width:32rem;
@@ -32,7 +26,7 @@ const Wrapper = styled.div`
 const News = ({
   newsList,
 }) => (
-  <Background>
+  <CenterLayout>
     <Wrapper>
       {newsList.map(item => (
         <NewsItem
@@ -41,7 +35,7 @@ const News = ({
         />
       ))}
     </Wrapper>
-  </Background>
+  </CenterLayout>
 )
 
 export default News

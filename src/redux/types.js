@@ -11,6 +11,7 @@ const Type = {
   REMOVE_WARNING: 'REMOVE_WARNING',
   OPEN_MODAL: 'OPEN_MODAL',
   CLOSE_MODAL: 'CLOSE_MODAL',
-
+  LOGIN: 'LOGIN',
+  LOGOUT: 'LOGOUT',
 }
 export default Type

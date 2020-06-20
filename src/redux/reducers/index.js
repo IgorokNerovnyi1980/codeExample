@@ -9,6 +9,7 @@ import lang from './langReducer'
 import warning from './warningReducer'
 import modal from './modalReducer'
 import weather from './weatherReducer'
+import user from './userReducer'
 
 export default combineReducers({
   news,
@@ -17,4 +18,5 @@ export default combineReducers({
   warning,
   weather,
   modal,
+  user,
 })

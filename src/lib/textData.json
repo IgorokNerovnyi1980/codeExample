@@ -17,7 +17,6 @@
             "ru":"раздел в разработке"
         }
     },
-    "login":{"uk":"авторізація","en":"login","ru":"авторизация"},
     "weather":{
         "button":{
                 "get":{
@@ -51,7 +50,38 @@
         "en":"additional features available to authorized users are displayed here",
         "ru":"здесь отображаются дополнительные функции, доступные авторизированным пользователям"
     },
-    "autorization":{"please":{"uk":"будь ласка авторизуйтесь","en":"please log in","ru":"пожалуйста авторизируйтесь"}},
+    "autorization":{
+        "please":{
+            "uk":"будь ласка авторизуйтесь",
+            "en":"please log in",
+            "ru":"пожалуйста авторизируйтесь"
+            },
+            "login":{
+                "uk":"авторізація",
+                "en":"login",
+                "ru":"авторизация"
+            },
+            "logout":{
+                "uk":"вийти",
+                "en":"logout",
+                "ru":"выйти"
+            },
+            "not_valid":{
+                "uk":"немає такого користувача",
+                "en":"no such user",
+                "ru":"нет такого пользователя"
+            },
+            "fill":{
+                "uk":"заповніть поля",
+                "en":"fill in the fields",
+                "ru":"заполните поля"
+            },
+            "welcome":{
+                "uk":"вхід виконано",
+                "en":"logged in",
+                "ru":"вход выполнен"
+            }
+    },
     "nav_menu":{
         "list":{
             "uk":[

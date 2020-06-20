@@ -15,6 +15,7 @@ import Button from './Button'
 import NavMenu from './NavMenu'
 import MobileNavMenu from './smollItems/MobileNavControl'
 import Logo from './DumpComponents/Logo'
+import UserAvatar from './user/UserAvatar'
 import Search from './smollItems/Search'
 
 const Wrapper = styled.div`
@@ -33,14 +34,14 @@ const Wrapper = styled.div`
 `
 
 const Header = ({
-  currentLang, SearchNews, // baseWarning,
+  currentLang, SearchNews, isLogin,
 }) => {
   const history = useHistory()
   const {
     pathname,
   } = useLocation()
   const {
-    login, logo,
+    logo, autorization,
   } = textData
   const [userWord, setUserWord] = useState('')
 
@@ -69,11 +70,14 @@ const Header = ({
               value={userWord}
             />
           ) : <MobileNavMenu />}
-          <Button
-            label={login[currentLang]}
-            fnClick={() => { history.push('/user') }}
-            dark
-          />
+          {isLogin ? <UserAvatar /> : (
+            <Button
+              label={autorization.login[currentLang]}
+              fnClick={() => { history.push('/user') }}
+              dark
+            />
+          )}
+
         </Wrapper>
       ) : (
         <Wrapper pagging="2.4rem ">
@@ -85,11 +89,13 @@ const Header = ({
               value={userWord}
             />
           ) : <NavMenu />}
-          <Button
-            label={login[currentLang]}
-            fnClick={() => { history.push('/user') }}
-            dark
-          />
+          {isLogin ? <UserAvatar /> : (
+            <Button
+              label={autorization.login[currentLang]}
+              fnClick={() => { history.push('/user') }}
+              dark
+            />
+          )}
         </Wrapper>
       ))}
 

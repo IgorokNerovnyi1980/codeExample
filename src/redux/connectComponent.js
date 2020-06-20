@@ -8,7 +8,7 @@ import {
 } from './actions/index'
 
 const mapSTP = ({
-  news, theme, lang, weather, modal,
+  news, theme, lang, weather, modal, user,
 }) => ({
   newsList: news.newsList,
   currentTheme: theme.currentTheme,
@@ -16,6 +16,7 @@ const mapSTP = ({
   currentWeather: weather.currentWeather,
   modalChildren: modal.children,
   modalStatus: modal.isOpen,
+  isLogin: user.isLogin,
 
 })
 

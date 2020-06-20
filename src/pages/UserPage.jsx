@@ -7,7 +7,7 @@ import Center from '../components/Center'
 import AppControls from '../components/smollItems/AppControls'
 import UserControl from '../components/smollItems/UserControl'
 import WeatherControl from '../components/smollItems/WeatherControl'
-import Autorization from '../components/user/Autorization'
+import UserContent from '../components/user'
 
 const UserPage = () => (
   <BaseComponent>
@@ -15,7 +15,7 @@ const UserPage = () => (
       <UserControl />
     </SidePiece>
     <Center>
-      <Autorization />
+      <UserContent />
     </Center>
     <SidePiece>
       <AppControls />

@@ -2,6 +2,9 @@ import React from 'react'
 import {
   useHistory,
 } from 'react-router-dom'
+import {
+  useDispatch,
+} from 'react-redux'
 
 import connectComponent from '../../redux/connectComponent'
 import Btn from '../Button'
@@ -10,12 +13,30 @@ import textData from '../../lib/textData.json'
 import SmollContainer from './SmollContainer'
 
 const UserControl = ({
-  currentLang,
+  currentLang, isLogin,
 }) => {
   const history = useHistory()
+  const dispatch = useDispatch()
   const {
-    login, right_side,
+    autorization, right_side,
   } = textData
+
+  const logout = () => {
+    dispatch({
+      type: 'LOGOUT',
+    })
+    sessionStorage.setItem('isLogin', false)
+  }
+
+  const fnClick = () => {
+    /*eslint-disable */
+    if (isLogin) {
+      return logout()
+    } else {
+      return history.push('/user')
+    }
+      /* eslint-enable */
+  }
 
   return (
     <SmollContainer
@@ -24,8 +45,8 @@ const UserControl = ({
     >
       <p>{right_side[currentLang]}</p>
       <Btn
-        label={login[currentLang]}
-        fnClick={() => { history.push('/user') }}
+        label={isLogin ? autorization.logout[currentLang] : autorization.login[currentLang]}
+        fnClick={fnClick}
         dark
       />
     </SmollContainer>

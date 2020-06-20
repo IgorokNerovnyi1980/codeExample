@@ -10,15 +10,8 @@ import {
 import developer from '../../img/developer.png'
 import textData from '../../lib/textData.json'
 
-const Background = styled.div`
-  width:100%;
-  height:100%;
-  padding:${props => props.theme.mainPad};
-  box-shadow:${props => props.theme.darkSmollBottomShdw};
-  display:flex;
-  justify-content:center;
-  align-items:center;
-`
+import CenterLayout from './CenterLayout'
+
 const Wrapper = styled(NavLink)`
   text-decoration:none;
   outline:none;
@@ -53,13 +46,13 @@ const InDevelopment = () => {
     development,
   } = textData
   return (
-    <Background>
+    <CenterLayout>
       <Wrapper to="/home">
         <p>{development.page[currentLang]}</p>
         <LogoImg src={developer} />
 
       </Wrapper>
-    </Background>
+    </CenterLayout>
   )
 }
 
