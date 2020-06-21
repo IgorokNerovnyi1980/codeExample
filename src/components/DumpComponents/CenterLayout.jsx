@@ -9,16 +9,19 @@ const Wrapper = styled.div`
   padding:${props => props.theme.mainPad};
   box-shadow:${props => props.theme.darkSmollBottomShdw};
   display:flex;
+  flex-direction:${props => props.flexDirection};
   justify-content:${props => props.justify};
   align-items:${props => props.align};
 `
 
 const CenterLayout = ({
   children, width = '100%', marginTop = 'unset', justify = 'center', align = 'center',
+  flexDirection = 'row',
 }) => (
   <Wrapper
     width={width}
     marginTop={marginTop}
+    flexDirection={flexDirection}
     justify={justify}
     align={align}
   >

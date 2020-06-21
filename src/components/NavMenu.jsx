@@ -7,8 +7,11 @@ import shortid from 'shortid'
 import {
   NavLink, useLocation,
 } from 'react-router-dom'
+import Media from 'react-media'
 
 import textData from '../lib/textData.json'
+
+import MobileNavMenu from './mobile/MobileNavMenu'
 
 const Wrapper = styled.nav`
     min-width:10rem;
@@ -43,20 +46,33 @@ const NavMenu = () => {
     nav_menu,
   } = textData
   return (
-    <Wrapper>
-      {nav_menu.list[currentLang].map(({
-        label, rout,
+    <Media queries={{
+      small: '(max-width: 900px)',
+    }}
+    >
+      {({
+        small,
       }) => (
-        <WrapLink
-          to={rout}
-          key={shortid.generate()}
-          current={(pathname === rout) ? true : false}//eslint-disable-line
-        >
-          {label}
-        </WrapLink>
-      ))}
+        small ? <MobileNavMenu />
+          : (
+            <Wrapper>
+              {nav_menu.list[currentLang].map(({
+                label, rout,
+              }) => (
+                <WrapLink
+                  to={rout}
+                  key={shortid.generate()}
+                  current={(pathname === rout)}
+                >
+                  {label}
+                </WrapLink>
+              ))}
 
-    </Wrapper>
+            </Wrapper>
+          )
+      )}
+    </Media>
+
   )
 }
 

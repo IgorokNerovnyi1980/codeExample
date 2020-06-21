@@ -1,30 +1,36 @@
 import React from 'react'
-import styled from 'styled-components'
+import Media from 'react-media'
 
 import CenterLayout from '../DumpComponents/CenterLayout'
 
-const Row = styled.div`
-width:32%;
-height:100%;
-min-height:calc(100vh - 12.4rem);
-background-color:grey;
-overflow:auto;
-display:flex;
-flex-direction:column;
-justify-content:flex-start;
-align-items:center;
-`
+import Row from './Row'
 
 const Price = () => (
-  <CenterLayout
-    width="96%"
-    marginTop="1rem"
-    justify="space-evenly"
-    align="flex-start"
+  <Media queries={{
+    small: '(max-width: 900px)',
+  }}
   >
-    <Row />
-    <Row />
-    <Row />
-  </CenterLayout>
+    {({
+      small,
+    }) => (
+      <CenterLayout
+        width="96%"
+        marginTop="1rem"
+        flexDirection={small ? 'column' : 'row'}
+        justify={small ? 'flex-start' : 'space-evenly'}
+        align="flex-start"
+      >
+        <Row>
+          <p>first row</p>
+        </Row>
+        <Row>
+          <p>second row</p>
+        </Row>
+        <Row>
+          <p>third row</p>
+        </Row>
+      </CenterLayout>
+    )}
+  </Media>
 )
 export default Price

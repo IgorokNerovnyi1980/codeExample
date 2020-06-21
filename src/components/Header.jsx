@@ -13,7 +13,6 @@ import textData from '../lib/textData.json'
 
 import Button from './Button'
 import NavMenu from './NavMenu'
-import MobileNavMenu from './smollItems/MobileNavControl'
 import Logo from './DumpComponents/Logo'
 import UserAvatar from './user/UserAvatar'
 import Search from './smollItems/Search'
@@ -40,6 +39,8 @@ const Header = ({
   const {
     pathname,
   } = useLocation()
+  // TODO - decide whether to use it here
+
   const {
     logo, autorization,
   } = textData
@@ -56,49 +57,34 @@ const Header = ({
   }
 
   return (
-    <Media query={{
-      maxWidth: 900,
+    <Media queries={{
+      small: '(max-width: 900px)',
     }}
     >
-      {matches => (matches ? (
-        <Wrapper pagging="2.4rem 0.5rem">
+      {({
+        small,
+      }) => (
+        <Wrapper pagging={small ? '2.4rem 0.5rem' : '2.4rem'}>
           <Logo label={logo[currentLang]} />
-          {pathname === '/news' ? (
-            <Search
-              fnChange={changeInput}
-              fnSubmit={getMySearch}
-              value={userWord}
-            />
-          ) : <MobileNavMenu />}
-          {isLogin ? <UserAvatar /> : (
-            <Button
-              label={autorization.login[currentLang]}
-              fnClick={() => { history.push('/user') }}
-              dark
-            />
-          )}
-
+          { pathname === '/news'
+            ? (
+              <Search
+                fnChange={changeInput}
+                fnSubmit={getMySearch}
+                value={userWord}
+              />
+            ) : <NavMenu />}
+          {isLogin
+            ? <UserAvatar />
+            : (
+              <Button
+                label={autorization.login[currentLang]}
+                fnClick={() => { history.push('/user') }}
+                dark
+              />
+            )}
         </Wrapper>
-      ) : (
-        <Wrapper pagging="2.4rem ">
-          <Logo label={logo[currentLang]} />
-          {pathname === '/news' ? (
-            <Search
-              fnChange={changeInput}
-              fnSubmit={getMySearch}
-              value={userWord}
-            />
-          ) : <NavMenu />}
-          {isLogin ? <UserAvatar /> : (
-            <Button
-              label={autorization.login[currentLang]}
-              fnClick={() => { history.push('/user') }}
-              dark
-            />
-          )}
-        </Wrapper>
-      ))}
-
+      )}
     </Media>
   )
 }

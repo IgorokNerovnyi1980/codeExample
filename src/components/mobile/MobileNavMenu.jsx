@@ -89,7 +89,7 @@ const MobileNavMenu = () => {
           <WrapLink
             to={rout}
             key={shortid.generate()}
-            current={(pathname === rout) ? true : false}//eslint-disable-line
+            current={(pathname === rout)}
             ref={listRef}
           >
             {label}
