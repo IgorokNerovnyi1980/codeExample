@@ -57,13 +57,16 @@ const NewsHotKey = ({
     })
     sessionStorage.setItem('keys', JSON.stringify(result))
   }
+  const searchByKey = (key) => {
+    SearchNews({
+      key,
+    })
+  }
 
   const action = (type, value) => {
     switch (type) {
       case 'search':
-        return SearchNews({
-          key: value,
-        })
+        return searchByKey(value)
       case 'delete': return deleteKey(value)
       default: return //eslint-disable-line
     }
@@ -78,7 +81,7 @@ const NewsHotKey = ({
           <Tab
             type="button"
             key={id}
-            onClick={() => action('search')}
+            onClick={() => action('search', key)}
           >
             {key}
             <Cross onClick={() => action('delete', id)}>&#10006;</Cross>
