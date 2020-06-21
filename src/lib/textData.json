@@ -11,6 +11,11 @@
         "en":"the code will make, [click] for return to the main page",
         "ru":"код в процессе создания, [click] чтоб вернутся на главную страницу"
         },
+        "not_found":{
+            "uk":"ОУ, немає такої сторінки, [click] щоб повернутися на головну сторінку",
+            "en":"OU, no such page, [click] for return to the main page",
+            "ru":"ОУ, нет такой страницы, [click] чтоб вернутся на главную страницу"
+            },
         "button":{
             "uk":"розділ в розробці",
             "en":"section in development",

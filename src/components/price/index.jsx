@@ -16,7 +16,7 @@ const Price = () => (
     }) => (
       <CenterLayout
         width="96%"
-        marginTop="1rem"
+        marginTop="0.5rem"
         flexDirection={small ? 'column' : 'row'}
         justify={small ? 'flex-start' : 'space-evenly'}
         align="flex-start"

@@ -8,6 +8,7 @@ import AboutMePage from './pages/AboutMePage'
 import NewsPage from './pages/NewsPage'
 import UserPage from './pages/UserPage'
 import TestPage from './pages/TestPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 const Routing = () => (
   <Switch>
@@ -36,6 +37,7 @@ const Routing = () => (
       path="/test"
       component={TestPage}
     />
+    <Route component={NotFoundPage} />
   </Switch>
 )
 

@@ -7,7 +7,7 @@ import {
   NavLink,
 } from 'react-router-dom'
 
-import developer from '../../img/developer.png'
+import developer from '../../img/404.png'
 import textData from '../../lib/textData.json'
 
 import CenterLayout from './CenterLayout'
@@ -46,9 +46,12 @@ const InDevelopment = () => {
     development,
   } = textData
   return (
-    <CenterLayout>
+    <CenterLayout
+      width="96%"
+      marginTop="1rem"
+    >
       <Wrapper to="/home">
-        <p>{development.page[currentLang]}</p>
+        <p>{development.not_found[currentLang]}</p>
         <LogoImg src={developer} />
 
       </Wrapper>
