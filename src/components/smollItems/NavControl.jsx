@@ -41,7 +41,6 @@ const NavMenu = () => {
   } = textData
   return (
     <SmollContainer
-      marginTop
       flexJustify
     >
       {nav_menu.list[currentLang].map(({

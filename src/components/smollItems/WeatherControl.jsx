@@ -35,7 +35,6 @@ const WeatherControl = ({
   return (
     <SmollContainer
       flexJustify
-      marginTop
     >
 
       {currentWeather

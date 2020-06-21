@@ -18,7 +18,7 @@ const UserControl = ({
   const history = useHistory()
   const dispatch = useDispatch()
   const {
-    autorization, right_side,
+    autorization, user_control,
   } = textData
 
   const logout = () => {
@@ -43,7 +43,7 @@ const UserControl = ({
       height="30vh"
       flexJustify
     >
-      <p>{right_side[currentLang]}</p>
+      <p>{isLogin ? user_control.login[currentLang] : user_control.logout[currentLang]}</p>
       <Btn
         label={isLogin ? autorization.logout[currentLang] : autorization.login[currentLang]}
         fnClick={fnClick}

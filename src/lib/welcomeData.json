@@ -1,9 +1,9 @@
 {
     "title":{"uk":"вітаю !!", "en":"greetings !!", "ru":"приветствую!!"},
     "first_article":{
-        "uk":"моє ім'я Ігор, цей сайт я зробив для презентації своїх навичок Frontend розробника. функціонал і можливості додатку будуть оновлюватися і змінюватися. тому, деякі фічі описані нижче не будуть представлені - сорян)). додаток не має серверної частини, тому вся інформація кешується в sessionStorage.",
-        "en":"my name is Igor, I made this website to present my Frontend developer skills. the functionality and capabilities of the application will be updated and changed. therefore, some features described below will not be presented - sorry)). the application does not have a server part, so all information is cached in sessionStorage.",
-        "ru":"меня зовут Игорь, этот сайт я сделал для презентации своих навыков Frontend разработчика. функционал и возможности приложения будут обновляться и изменяться. поэтому, некоторые фичи описанные ниже не будут представлены – сорян)). приложение не имеет серверной части, поэтому вся информация кэшируется в sessionStorage."
+        "uk":"моє ім'я Ігор, цей сайт я зробив для презентації своїх навичок Frontend розробника. функціонал та можливості програми будуть оновлюватися / змінюватися. тому, деякі фічі описані нижче не будуть представлені - сорян)). додаток не має серверної частини - вся інформація кешується в sessionStorage. додаток розрахован в першу чергу для перегляду на ПК (як developer), але також, я оптимізував контент і для мобільних пристроїв.",
+        "en":"my name is Igor, I made this site to present my Frontend developer skills. the functionality and capabilities of the application will be updated / modified. therefore, some features described below will not be presented - sorry)). the application does not have a server part - all information is cached in sessionStorage. The application is designed primarily for viewing on a PC (as a developer), but also, I optimized the content for viewing on mobile devices.",
+        "ru":"меня зовут Игорь, этот сайт я сделал для презентации своих навыков Frontend разработчика. функционал и возможности приложения будут обновляться / изменяться. поэтому, некоторые фичи описанные ниже не будут представлены – сорян)). приложение не имеет серверной части - вся информация кэшируется в sessionStorage. Приложение рассчитано в первую очередь для просмотра на ПК (как developer), но также, я оптимизировал контент для мобильных устройств."
     },
     "second_article":{
         "uk":"на сторінці AboutMe присутня контактна інформація.",
@@ -25,7 +25,7 @@
             "uk":[
                 "зміна колірної теми",
                 "вибір мови",
-                "актуальні новини (наразі запит виконуєтся лише з localHost)",
+                "приклади моєї реалізації",
                 "прогноз погоди для вашої локації",
                 "авторизація",
                 "особистий кабінет"
@@ -33,7 +33,7 @@
             "en":[
                 "change the color theme",
                 "language selection",
-                "current news (while requests are executed only with localHost)",
+                "examples of my implementation",
                 "weather forecast for your location",
                 "authorization",
                 "personal area"
@@ -41,7 +41,7 @@
             "ru":[
                 "изменение цветовой темы",
                 "выбор языка",
-                "актуальные новости (пока запросы выполняются только с localHost)",
+                "примеры моей реализации",
                 "прогноз погоды для вашей локации",
                 "авторизация",
                 "личный кабинет"

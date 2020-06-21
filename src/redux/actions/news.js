@@ -38,6 +38,10 @@ export const SearchNews = ({
         type: Type.GET_ALL_NEWS,
         payload: data.articles,
       })
+      dispatch({
+        type: Type.SEARCH_RESULT,
+        payload: key,
+      })
     }
   } catch (err) {
     dispatch({

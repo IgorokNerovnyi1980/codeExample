@@ -20,6 +20,6 @@ export const newsApi = axios.create({
 })
 
 export const AutorizationData = {
-  login: 'new User',
-  password: '123W45',
+  login: 'user',
+  password: '123',
 }

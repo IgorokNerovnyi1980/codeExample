@@ -5,8 +5,12 @@ import {
   useHistory,
   useLocation,
 } from 'react-router-dom'
+import {
+  useDispatch,
+} from 'react-redux'
 import styled from 'styled-components'
 import Media from 'react-media'
+import shortid from 'shortid'
 
 import connectComponent from '../redux/connectComponent'
 import textData from '../lib/textData.json'
@@ -36,6 +40,7 @@ const Header = ({
   currentLang, SearchNews, isLogin,
 }) => {
   const history = useHistory()
+  const dispatch = useDispatch()
   const {
     pathname,
   } = useLocation()
@@ -46,11 +51,28 @@ const Header = ({
   } = textData
   const [userWord, setUserWord] = useState('')
 
-  const getMySearch = (e) => {
+  const getMySearch = async (e) => {
     e.preventDefault()
     SearchNews({
       key: userWord,
     })
+    const newKey = {
+      id: shortid.generate(),
+      key: userWord,
+    }
+    const isHaveKey = await JSON.parse(sessionStorage.getItem('keys'))
+    dispatch({
+      type: 'ADD_KEY',
+      payload: newKey,
+    })
+    /*eslint-disable */
+    if (isHaveKey) { 
+      sessionStorage.setItem('keys', JSON.stringify([...isHaveKey,newKey]))
+    }else{
+      sessionStorage.setItem('keys', JSON.stringify([newKey]))
+    }
+    /* eslint-enable */
+    setUserWord('')
   }
   const changeInput = (e) => {
     setUserWord(e.target.value)

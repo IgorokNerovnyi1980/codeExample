@@ -17,6 +17,8 @@ const mapSTP = ({
   modalChildren: modal.children,
   modalStatus: modal.isOpen,
   isLogin: user.isLogin,
+  keyWordList: user.keyWordList,
+  searchResult: user.searchResult,
 
 })
 

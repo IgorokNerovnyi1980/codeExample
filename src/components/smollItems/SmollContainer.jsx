@@ -3,9 +3,9 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
     width:90%;
-    margin-top:${props => (props.marginTop ? '1rem' : 'unset')};
+    margin-bottom:1rem;
     height:${props => props.height};
-    min-height:17rem;
+    min-height:${props => props.minHeight};
     padding:${props => props.theme.mainPad};
     border-radius:0.5rem;
     color:${props => props.theme.greetingsBG};
@@ -18,12 +18,12 @@ const Wrapper = styled.div`
 `
 
 const SmollContainer = ({
-  children, height, flexJustify = false, marginTop = false,
+  children, height, flexJustify = false, minHeight = '17rem',
 }) => (
   <Wrapper
     height={height}
+    minHeight={minHeight}
     flexJustify={flexJustify}
-    marginTop={marginTop}
   >
     {children}
   </Wrapper>
