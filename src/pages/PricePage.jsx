@@ -4,9 +4,9 @@ import BaseComponent from '../components/BaseComponent'
 import connectComponent from '../redux/connectComponent'
 import Price from '../components/price'
 
-const TestPage = () => (
+const PricePage = () => (
   <BaseComponent>
     <Price />
   </BaseComponent>
 )
-export default connectComponent(TestPage)
+export default connectComponent(PricePage)

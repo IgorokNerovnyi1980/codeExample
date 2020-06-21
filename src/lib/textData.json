@@ -92,19 +92,48 @@
             "uk":[
                 {"label":"головна", "rout": "/home"},
                 {"label":"про мене","rout": "/about_me" },
-                {"label":"новини","rout": "/news" }
+                {"label":"приклади","rout": "/examples" }
             ],
                 "en":[
                     {"label":"home", "rout": "/home"},
                     {"label":"about me","rout": "/about_me" },
-                    {"label":"news","rout": "/news" }
+                    {"label":"examples","rout": "/examples" }
                 ],
                 "ru":[
                     {"label":"главная", "rout": "/home"},
                     {"label":"обо мне","rout": "/about_me" },
-                    {"label":"новости","rout": "/news" }
+                    {"label":"примеры","rout": "/examples" }
                 ]
                 }
+    },
+    "examples":{
+        "dataList":[
+            {
+                "label":{
+                    "uk":"використання стороннього АПІ",
+                    "en":"use someone API",
+                    "ru":"использование сторонего АПИ"
+                },
+                "rout":"news",
+                "description":{
+                    "uk":"для прикладу використовую АПИ з тестовим ключем, тому, запити до сервера виконуються тільки з локалхост. можливості - перегляд новин, перехід на основний ресурс, пошук за словом, для авторизованих користувача зберігаються пошукові ключі",
+                    "en":"for example, I use the API with a test key, therefore, requests to the server are executed only from the localhost. opportunities - viewing news, switching to the main resource, searching by word, search keys are stored for an authorized user",
+                    "ru":"для примера использую АПИ с тестовым ключом, поэтому, запросы к серверу выполняются только с localhost. возможности - просмотр новостей, переход на основной ресурс, поиск по слову, для авторизированого пользователя сохраняются поисковые ключи"}
+            },
+            {
+                "label":{
+                    "uk":"вибір товару + корзина",
+                    "en":"product selection + total",
+                    "ru":"выбор товара + корзина"
+                },
+                "rout":"price",
+                "description":{
+                    "uk":"приклад відображення меню ресторана / прайса / каталогу. можливості - перегляд складу категорії товарів. для авторизованого користувача доступні - вибір товарів, вибір кількості обраного товару, корзина",
+                    "en":"An example of displaying a restaurant / price / catalog menu. features - view the composition of the product category. for an authorized user are available - selection of goods, selection of the number of selected goods, basket",
+                    "ru":"пример отображения меню ресторана / прайса / каталога. возможности - просмотр состава категории товаров. для авторизированного пользователя доступны - выбор товаров, выбор колличества выбранного товара, корзина"
+                }
+            }
+        ]
     }
 
 }

@@ -6,16 +6,16 @@ import SidePiece from '../components/SidePiece'
 import Center from '../components/Center'
 import AppControls from '../components/smollItems/AppControls'
 import UserControl from '../components/smollItems/UserControl'
-import Welcome from '../components/other/Welcome'
+import Exsamples from '../components/other/Examples'
 import WeatherControl from '../components/smollItems/WeatherControl'
 
-const HomePage = () => (
+const ExamplesPage = () => (
   <BaseComponent>
     <SidePiece left>
       <UserControl />
     </SidePiece>
     <Center>
-      <Welcome />
+      <Exsamples />
     </Center>
     <SidePiece>
       <AppControls />
@@ -23,4 +23,4 @@ const HomePage = () => (
     </SidePiece>
   </BaseComponent>
 )
-export default connectComponent(HomePage)
+export default connectComponent(ExamplesPage)

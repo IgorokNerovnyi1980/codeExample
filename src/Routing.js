@@ -5,10 +5,10 @@ import {
 
 import HomePage from './pages/HomePage'
 import AboutMePage from './pages/AboutMePage'
-import NewsPage from './pages/NewsPage'
 import UserPage from './pages/UserPage'
-import TestPage from './pages/TestPage'
 import NotFoundPage from './pages/NotFoundPage'
+import ExamplesPage from './pages/ExamplesPage'
+import CombinedPage from './pages/CombinedPage'
 
 const Routing = () => (
   <Switch>
@@ -30,12 +30,13 @@ const Routing = () => (
       component={UserPage}
     />
     <Route
-      path="/news"
-      component={NewsPage}
+      path="/examples"
+      exact
+      component={ExamplesPage}
     />
     <Route
-      path="/test"
-      component={TestPage}
+      path="/examples/:current"
+      component={CombinedPage}
     />
     <Route component={NotFoundPage} />
   </Switch>

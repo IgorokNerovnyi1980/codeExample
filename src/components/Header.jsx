@@ -66,7 +66,7 @@ const Header = ({
       }) => (
         <Wrapper pagging={small ? '2.4rem 0.5rem' : '2.4rem'}>
           <Logo label={logo[currentLang]} />
-          { pathname === '/news'
+          { pathname === '/examples/news'
             ? (
               <Search
                 fnChange={changeInput}

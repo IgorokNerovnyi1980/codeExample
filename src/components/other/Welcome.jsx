@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom'
 import shortid from 'shortid'
 
-import welcomeData from '../lib/welcomeData.json'
+import welcomeData from '../../lib/welcomeData.json'
 
 const Wrapper = styled.div`
   width:100%;
