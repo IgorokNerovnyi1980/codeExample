@@ -1,6 +1,6 @@
 export const Bg = {
   mainBG: '#FFFAFA',
-  secondaryBG: '#a3bad9',
+  secondaryBG: '#8e949c',
   greetingsBG: '#262222',
 }
 export const firstBg = {
@@ -44,7 +44,9 @@ export const Shdw = {
 }
 export const other = {
   mainPad: '1rem',
+  secondaryPad: '0.5rem',
   mainSidePad: '0 1rem',
+  secondarySidePad: '0.1rem 0.5rem',
 }
 
 export default {

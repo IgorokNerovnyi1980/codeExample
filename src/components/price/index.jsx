@@ -4,6 +4,7 @@ import Media from 'react-media'
 import CenterLayout from '../DumpComponents/CenterLayout'
 
 import Row from './Row'
+import CategoriesItem from './CategoriesItem'
 
 const Price = () => (
   <Media queries={{
@@ -21,13 +22,20 @@ const Price = () => (
         align="flex-start"
       >
         <Row>
-          <p>first row</p>
+          <CategoriesItem />
+          <CategoriesItem />
         </Row>
         <Row>
-          <p>second row</p>
+          <CategoriesItem />
+          <CategoriesItem />
+          <CategoriesItem />
+          <CategoriesItem />
+          <CategoriesItem />
+          <CategoriesItem />
         </Row>
         <Row>
-          <p>third row</p>
+          <CategoriesItem />
+          <CategoriesItem />
         </Row>
       </CenterLayout>
     )}

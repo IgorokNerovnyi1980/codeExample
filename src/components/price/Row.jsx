@@ -5,14 +5,11 @@ import Media from 'react-media'
 const Wrapper = styled.div`
 margin-bottom:${props => (props.marginBottom ? '1rem' : 'unset')};
 width:${props => props.rowWidth};
-height:100%;
-min-height:${props => props.minHeight};
-background-color:grey;
+min-height:${props => props.height};
 display:flex;
 flex-direction:column;
 justify-content:flex-start;
-align-items:center;
-overflow:auto;
+align-items:center; 
 `
 
 const Row = ({
@@ -27,8 +24,8 @@ const Row = ({
     }) => (
       <Wrapper
         rowWidth={small ? '100%' : '32%'}
-        minHeight={small ? 'auto' : 'calc(100vh - 12.4rem)'}
-        marginBottom={!!small}
+        height={small ? 'auto' : 'calc(100vh - 12.4rem)'}
+        marginBottom={!small}
       >
         {children}
 

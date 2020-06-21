@@ -15,7 +15,7 @@ const Wrapper = styled.form`
     display:flex;
     border:0.1rem solid${props => props.theme.darkHotBg};
     border-radius:0.1rem;
-    color:${props => props.theme.secondaryBG};
+    color:${props => props.theme.greetingsBG};
     background-color:${props => props.theme.mainBG};
     input{
         width:70%;
