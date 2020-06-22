@@ -17,7 +17,7 @@ const Wrapper = styled.div`
     display:${props => (props.isShow ? 'flex' : 'none')};
     position:absolute;
     top:2rem;
-    left:50%;
+    left:calc(50% - 10rem);
     padding:${props => props.theme.mainPad};
     background-color:${props => props.theme.darkColdBg};
     box-shadow:${props => props.theme.darkSmollBottomShdw};
