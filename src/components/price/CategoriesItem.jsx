@@ -38,7 +38,7 @@ const Line = styled.div`
     }
 `
 const HaveMany = styled.div`
-    z-index:5;
+    z-index:10;
     position:absolute;
     right:20%;
     display:${props => (props.active ? 'flex' : 'none')};
@@ -62,7 +62,7 @@ const HaveMany = styled.div`
 
 const CategoriesItem = ({
   label = 'Default', content = [], currentCategory,
-  fnToggle,
+  fnToggle, fnSetQantity,
 }) => {
   const [isOpen, setIsOpen] = useState(true)
   const toggler = () => {
@@ -82,16 +82,24 @@ const CategoriesItem = ({
           <Line
             active={obj.isActive}
             key={obj.id}
-            onClick={() => fnToggle(obj.id, currentCategory)}
-
           >
             <HaveMany active={obj.isActive}>
-              <button type="button">-</button>
-              <span>1</span>
-              <button type="button">+</button>
+              <button
+                type="button"
+                onClick={() => fnSetQantity('minus', obj.id, currentCategory)}
+              >
+                -
+              </button>
+              <span>{obj.quantity}</span>
+              <button
+                type="button"
+                onClick={() => fnSetQantity('plus', obj.id, currentCategory)}
+              >
+                +
+              </button>
             </HaveMany>
-            <p>{obj.name}</p>
-            <p>{`${obj.price} $`}</p>
+            <p onClick={() => fnToggle(obj.id, currentCategory)}>{obj.name}</p>
+            <p onClick={() => fnToggle(obj.id, currentCategory)}>{`${obj.price} $`}</p>
           </Line>
         ))}
       </Content>

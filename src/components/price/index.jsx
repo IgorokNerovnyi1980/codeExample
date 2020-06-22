@@ -1,10 +1,9 @@
-// <CenterLayout>
-//   <InDevelopment />
-// </CenterLayout>
-
 import React, {
   useEffect, useState,
 } from 'react'
+import {
+  useSelector, useDispatch,
+} from 'react-redux'
 import Media from 'react-media'
 import shortid from 'shortid'
 
@@ -16,6 +15,8 @@ import CategoriesItem from './CategoriesItem'
 import toolsList from './dataList'
 
 const Price = () => {
+  const isLogin = useSelector(store => store.user.isLogin)
+  const dispatch = useDispatch()
   const [value, setValue] = useState(null)
   const [state, setState] = useState([])
 
@@ -28,6 +29,52 @@ const Price = () => {
   }, [value])
 
   const toggler = (id, categoryId) => {
+    if (isLogin) {
+      const concatinateArr = state.flatMap(arr => arr)
+      const findObj = concatinateArr.find(obj => obj.id === categoryId)
+      const toggle = {
+        ...findObj,
+        data: findObj.data.map((obj) => {
+          if (obj.id === id) {
+            return {
+              ...obj,
+              isActive: !obj.isActive,
+              quantity: obj.isActive ? obj.quantity : 1,
+            }
+          }
+          return obj
+        }),
+      }
+      const changeObj = concatinateArr.map((obj) => {
+        if (obj.id === categoryId) {
+          return toggle
+        }
+        return obj
+      })
+      setState(separateArr(changeObj, value))
+    } else {
+      dispatch({
+        type: 'SHOW_WARNING',
+        payload: 'for authorized users only',
+      })
+    }
+  }
+
+  const calculation = (type, quantity) => {
+    switch (type) {
+      case 'plus':
+        return quantity + 1
+      case 'minus':
+        if (quantity <= 0) {
+          return 0
+        }
+        return quantity - 1
+
+      default: return quantity
+    }
+  }
+
+  const setQantity = (typeAction, id, categoryId) => {
     const concatinateArr = state.flatMap(arr => arr)
     const findObj = concatinateArr.find(obj => obj.id === categoryId)
     const toggle = {
@@ -36,7 +83,8 @@ const Price = () => {
         if (obj.id === id) {
           return {
             ...obj,
-            isActive: !obj.isActive,
+            quantity: calculation(typeAction, obj.quantity),
+            isActive: calculation(typeAction, obj.quantity) === 0 ? false : obj.isActive,
           }
         }
         return obj
@@ -75,6 +123,7 @@ const Price = () => {
                   content={obj.data}
                   currentCategory={obj.id}
                   fnToggle={toggler}
+                  fnSetQantity={setQantity}
                 />
               ))}
             </Row>
