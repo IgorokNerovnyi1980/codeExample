@@ -38,9 +38,10 @@ const Line = styled.div`
     }
 `
 const HaveMany = styled.div`
+    z-index:5;
     position:absolute;
     right:20%;
-    display:flex;
+    display:${props => (props.active ? 'flex' : 'none')};
     justify-content:space-between;
     align-items:center;
     color:${props => props.theme.greetingsBG};
@@ -59,8 +60,11 @@ const HaveMany = styled.div`
     }
 `
 
-const CategoriesItem = () => {
-  const [isOpen, setIsOpen] = useState(false)
+const CategoriesItem = ({
+  label = 'Default', content = [], currentCategory,
+  fnToggle,
+}) => {
+  const [isOpen, setIsOpen] = useState(true)
   const toggler = () => {
     setIsOpen(!isOpen)
   }
@@ -70,49 +74,26 @@ const CategoriesItem = () => {
         bottomRadius={!isOpen}
         onClick={toggler}
       >
-        Default
+        {label}
       </Label>
       {isOpen && (
       <Content>
-        <Line>
-          <p>title</p>
-          <p>price</p>
-        </Line>
-        <Line active>
-          <HaveMany>
-            <button type="button">-</button>
-            <span>1</span>
-            <button type="button">+</button>
-          </HaveMany>
-          <p>title</p>
-          <p>price</p>
-        </Line>
-        <Line>
-          <HaveMany>
-            <button type="button">-</button>
-            <span>1</span>
-            <button type="button">+</button>
-          </HaveMany>
-          <p>title</p>
-          <p>price</p>
-        </Line>
-        <Line active>
-          <HaveMany>
-            <button type="button">-</button>
-            <span>1</span>
-            <button type="button">+</button>
-          </HaveMany>
-          <p>title</p>
-          <p>price</p>
-        </Line>
-        <Line>
-          <p>title</p>
-          <p>price</p>
-        </Line>
-        <Line>
-          <p>title</p>
-          <p>price</p>
-        </Line>
+        {content.map(obj => (
+          <Line
+            active={obj.isActive}
+            key={obj.id}
+            onClick={() => fnToggle(obj.id, currentCategory)}
+
+          >
+            <HaveMany active={obj.isActive}>
+              <button type="button">-</button>
+              <span>1</span>
+              <button type="button">+</button>
+            </HaveMany>
+            <p>{obj.name}</p>
+            <p>{`${obj.price} $`}</p>
+          </Line>
+        ))}
       </Content>
       )}
     </Wrapper>
