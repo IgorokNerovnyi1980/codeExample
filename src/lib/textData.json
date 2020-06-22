@@ -130,15 +130,15 @@
             },
             {
                 "label":{
-                    "uk":"вибір товару + корзина",
-                    "en":"product selection + total",
-                    "ru":"выбор товара + корзина"
+                    "uk":"вибір товару",
+                    "en":"product selection",
+                    "ru":"выбор товара"
                 },
                 "rout":"price",
                 "description":{
-                    "uk":"приклад відображення меню ресторана / прайса / каталогу. можливості - перегляд складу категорії товарів. для авторизованого користувача доступні - вибір товарів, вибір кількості обраного товару, корзина",
-                    "en":"An example of displaying a restaurant / price / catalog menu. features - view the composition of the product category. for an authorized user are available - selection of goods, selection of the number of selected goods, basket",
-                    "ru":"пример отображения меню ресторана / прайса / каталога. возможности - просмотр состава категории товаров. для авторизированного пользователя доступны - выбор товаров, выбор колличества выбранного товара, корзина"
+                    "uk":"приклад відображення меню ресторана / прайса / каталогу. можливості - перегляд складу категорії товарів. для авторизованого користувача доступні - вибір товарів, вибір кількості обраного товару",
+                    "en":"An example of displaying a restaurant / price / catalog menu. features - view the composition of the product category. for an authorized user are available - selection of goods, selection of the number of selected goods",
+                    "ru":"пример отображения меню ресторана / прайса / каталога. возможности - просмотр состава категории товаров. для авторизированного пользователя доступны - выбор товаров, выбор колличества выбранного товара"
                 }
             }
         ]
