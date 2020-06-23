@@ -5,6 +5,10 @@
     },
     "lang_list":["uk","en","ru"],
     "logo":{"uk":"ваш логотип","en":"your logo","ru":"ваш логотип"},
+    "price":{
+        "nothing":{"uk":"ви нічого не вибрали","en":"you have not chosen anything","ru":"вы ничего не выбрали"},
+        "total":{"uk":"загальна вартість","en":"total cost","ru":"общая стоимость"}
+    },
     "development":{
         "page":{
         "uk":"код на стадіі створення, [click] щоб повернутися на головну сторінку",

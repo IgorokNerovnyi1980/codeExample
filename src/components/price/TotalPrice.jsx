@@ -6,6 +6,7 @@ import {
   useSelector,
 } from 'react-redux'
 
+import textData from '../../lib/textData.json'
 import SmollContainer from '../smollItems/SmollContainer'
 import concatinationPrice from '../../helpers/concatinationPrice'
 
@@ -15,6 +16,9 @@ const Content = styled.div`
       display: flex;
       flex-wrap:wrap;
       justify-content:flex-start;
+      .total{
+        margin-left:0.5rem;
+      }
   `
 const Line = styled.div`
   width:100%;
@@ -38,6 +42,10 @@ const Line = styled.div`
 
 const TotalPrice = () => {
   const userChoise = useSelector(store => store.user.userChoise)
+  const currentLang = useSelector(store => store.lang.currentLang)
+  const {
+    price,
+  } = textData
   const [total, setTotal] = useState(0)
   const [flag, setFlag] = useState(false)
 
@@ -73,8 +81,8 @@ const TotalPrice = () => {
               {`${(obj.quantity * obj.price).toFixed(2)} $`}
             </p>
           </Line>
-        )) : <p>вы ничего не выбрали</p>}
-        {isData && <p className="total">{`total: ${total} $`}</p>}
+        )) : <p>{price.nothing[currentLang]}</p>}
+        {isData && <p className="total">{`${price.total[currentLang]}: ${total} $`}</p>}
       </Content>
     </SmollContainer>
   )

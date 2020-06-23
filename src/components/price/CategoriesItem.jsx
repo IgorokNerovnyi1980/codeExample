@@ -38,7 +38,7 @@ const Line = styled.div`
     }
 `
 const HaveMany = styled.div`
-    z-index:10;
+    z-index:2;
     position:absolute;
     right:30%;
     padding:${props => props.theme.secondaryPad};
