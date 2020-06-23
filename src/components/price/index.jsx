@@ -16,6 +16,7 @@ import toolsList from './dataList'
 
 const Price = () => {
   const isLogin = useSelector(store => store.user.isLogin)
+  const userChoise = useSelector(store => store.user.userChoise)
   const dispatch = useDispatch()
   const [value, setValue] = useState(null)
   const [state, setState] = useState([])
@@ -28,10 +29,46 @@ const Price = () => {
     if (value)setState(separateArr(toolsList, value))
   }, [value])
 
+  const updateChoise = (category, id, type) => {
+    const obj = category.data.find(el => el.id === id)
+    if (userChoise.length > 0) {
+      const isHave = userChoise.find(el => el.id === obj.id)
+      if (isHave) {
+        switch (type) {
+          case 'toggle':
+            dispatch({
+              type: 'UPDATE_CHOISE',
+              payload: userChoise.filter(el => (el.id !== obj.id)),
+            })
+            break
+          case 'setQantity':
+            dispatch({
+              type: 'UPDATE_CHOISE',
+              payload: obj.isActive
+                ? userChoise.map((el) => { if (el.id === obj.id) { return obj } return el })
+                : userChoise.filter(el => (el.id !== obj.id)),
+            })
+            break
+          default: break
+        }
+      } else {
+        dispatch({
+          type: 'UPDATE_CHOISE',
+          payload: [...userChoise, obj],
+        })
+      }
+    } else {
+      dispatch({
+        type: 'UPDATE_CHOISE',
+        payload: [obj],
+      })
+    }
+  }
   const toggler = (id, categoryId) => {
     if (isLogin) {
       const concatinateArr = state.flatMap(arr => arr)
       const findObj = concatinateArr.find(obj => obj.id === categoryId)
+
       const toggle = {
         ...findObj,
         data: findObj.data.map((obj) => {
@@ -51,6 +88,7 @@ const Price = () => {
         }
         return obj
       })
+      updateChoise(toggle, id, 'toggle')
       setState(separateArr(changeObj, value))
     } else {
       dispatch({
@@ -96,6 +134,7 @@ const Price = () => {
       }
       return obj
     })
+    updateChoise(toggle, id, 'setQantity')
     setState(separateArr(changeObj, value))
   }
 
@@ -108,8 +147,8 @@ const Price = () => {
         small,
       }) => (
         <CenterLayout
-          width="96%"
-          marginTop="0.5rem"
+          // width="96%"
+          // marginTop="0.5rem"
           flexDirection={small ? 'column' : 'row'}
           justify={small ? 'flex-start' : 'space-evenly'}
           align="flex-start"

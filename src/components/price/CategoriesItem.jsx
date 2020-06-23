@@ -30,21 +30,24 @@ const Line = styled.div`
     display:flex;
     justify-content:space-between;
     align-items:center;
-    font-weight:${props => (props.active ? '600' : '400')};
-    color:${props => (props.active ? 'green' : props.theme.greetingsBG)};
     transition:0.2s;
-    p{
+    button{
+        font-weight:${props => (props.active ? '600' : '400')};
+        color:${props => (props.active ? 'green' : props.theme.greetingsBG)};
         cursor:pointer;
     }
 `
 const HaveMany = styled.div`
     z-index:10;
     position:absolute;
-    right:20%;
+    right:30%;
+    padding:${props => props.theme.secondaryPad};
     display:${props => (props.active ? 'flex' : 'none')};
     justify-content:space-between;
     align-items:center;
+    background-color:${props => props.theme.mainBG};
     color:${props => props.theme.greetingsBG};
+
     button{
         padding:${props => props.theme.secondarySidePad};
         border:1px solid${props => props.theme.greetingsBG};
@@ -98,8 +101,18 @@ const CategoriesItem = ({
                 +
               </button>
             </HaveMany>
-            <p onClick={() => fnToggle(obj.id, currentCategory)}>{obj.name}</p>
-            <p onClick={() => fnToggle(obj.id, currentCategory)}>{`${obj.price} $`}</p>
+            <button
+              type="button"
+              onClick={() => fnToggle(obj.id, currentCategory)}
+            >
+              {obj.name}
+            </button>
+            <button
+              type="button"
+              onClick={() => fnToggle(obj.id, currentCategory)}
+            >
+              {`${obj.price} $`}
+            </button>
           </Line>
         ))}
       </Content>

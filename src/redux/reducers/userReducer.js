@@ -4,6 +4,7 @@ const initialState = {
   isLogin: false,
   keyWordList: [],
   searchResult: null,
+  userChoise: [],
 }
 
 const reducer = (state = initialState, action) => {
@@ -40,6 +41,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         searchResult: action.payload,
+      }
+    case Type.UPDATE_CHOISE:
+      return {
+        ...state,
+        userChoise: action.payload,
       }
     default:
       return state
