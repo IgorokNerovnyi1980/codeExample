@@ -6,7 +6,8 @@ import SidePiece from '../components/SidePiece'
 import Center from '../components/Center'
 import AppControls from '../components/smollItems/AppControls'
 import UserControl from '../components/smollItems/UserControl'
-import InDevelopment from '../components/DumpComponents/InDevelopment'
+// import InDevelopment from '../components/DumpComponents/InDevelopment'
+import Cv from '../components/other/Cv'
 import WeatherControl from '../components/smollItems/WeatherControl'
 
 const AboutMePage = () => (
@@ -15,7 +16,7 @@ const AboutMePage = () => (
       <UserControl />
     </SidePiece>
     <Center>
-      <InDevelopment />
+      <Cv />
     </Center>
     <SidePiece>
       <AppControls />

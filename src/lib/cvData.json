@@ -1,0 +1,107 @@
+[
+    {
+        "label":{"uk":"", "en":"goal", "ru":""},
+        "description":{
+            "uk":"", 
+            "en":"to create modern applications with an excellent interface that help people live simple, easy to do business and be up-to-date at any time.", 
+            "ru":""
+        }
+    },
+    {
+        "label":{"uk":"", "en":"specialization", "ru":""},
+        "description":{
+            "uk":"front end", 
+            "en":"front end", 
+            "ru":"front end"
+        }
+    },
+    {
+        "label":{"uk":"", "en":"my stack", "ru":""},
+        "description":{
+            "uk":"JS / React / redux / styled-components", 
+            "en":"JS / React / redux / styled-components", 
+            "ru":"JS / React / redux / styled-components"
+        }
+    },
+    {
+        "label":{"uk":"", "en":"interests", "ru":""},
+        "description":{
+            "uk":"react-native / next.js / node / mongo", 
+            "en":"react-native / next.js / node / mongo", 
+            "ru":"react-native / next.js / node / mongo"
+        }
+    },
+    {
+        "label":{"uk":"", "en":"experience", "ru":""},
+        "description":{
+            "uk":"", 
+            "en":"", 
+            "ru":""
+        }
+    },
+    {
+        "label":{"uk":"", "en":"2017-2019", "ru":""},
+        "description":{
+            "uk":"", 
+            "en":"SEO optimization of online stores (work with the  structure of the sites, content)", 
+            "ru":""
+        }
+    },
+    {
+        "label":{"uk":"", "en":"2019-2020", "ru":""},
+        "description":{
+            "uk":"", 
+            "en":"front end (some freelance work)", 
+            "ru":""
+        }
+    },
+    {
+        "label":{"uk":"", "en":"october - march", "ru":""},
+        "description":{
+            "uk":"", 
+            "en":"fullstack in Rost.company", 
+            "ru":""
+        }
+    },
+    {
+        "label":{"uk":"", "en":"march - july", "ru":""},
+        "description":{
+            "uk":"", 
+            "en":"frontend developer xqr.one", 
+            "ru":""
+        }
+    },
+    {
+        "label":{"uk":"", "en":"background", "ru":""},
+        "description":{
+            "uk":"", 
+            "en":"", 
+            "ru":""
+        }
+    },
+    {
+        "label":{"uk":"1999-2004", "en":"1999-2004", "ru":"1999-2004"},
+        "description":{
+            "uk":"", 
+            "en":"National Music Academy in Kiev (Master)", 
+            "ru":""
+        }
+    },
+    {
+        "label":{"uk":"2004-2007", "en":"2004-2007", "ru":"2004-2007"},
+        "description":{
+            "uk":"", 
+            "en":"National Music Academy in Kiev (postgraduate)", 
+            "ru":""
+        }
+    },
+    {
+        "label":{"uk":"", "en":"2018-2019", "ru":""},
+        "description":{
+            "uk":"", 
+            "en":"courses GOiT FullStack developer (JS/React/Node/Mongo)", 
+            "ru":""
+        }
+    }
+   
+]

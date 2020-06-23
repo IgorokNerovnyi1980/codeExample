@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   height:100%;
   min-height:calc(100vh - 10.4rem);
   margin-top:${props => props.marginTop};
-  padding:${props => props.theme.mainPad};
+  padding:${props => (props.pad ? props.theme.mainPad : 'unset')};
   box-shadow:${props => props.theme.darkSmollBottomShdw};
   display:flex;
   flex-direction:${props => props.flexDirection};
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 
 const CenterLayout = ({
   children, width = '100%', marginTop = 'unset', justify = 'center', align = 'center',
-  flexDirection = 'row',
+  flexDirection = 'row', pad = true,
 }) => (
   <Wrapper
     width={width}
@@ -24,6 +24,7 @@ const CenterLayout = ({
     flexDirection={flexDirection}
     justify={justify}
     align={align}
+    pad={pad}
   >
     {children}
   </Wrapper>
