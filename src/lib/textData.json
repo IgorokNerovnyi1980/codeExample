@@ -161,10 +161,11 @@
             
         ],
         "copy":[
-            {"link":"+380669384848", "icon":"Phone"},
-            {"link":"i.nerovnyi@gmail.com", "icon":"Email"},
-            {"link":"@Igor_Nerovnyi", "icon":"Telegramm"}
-        ]
+            {"link":"+380669384848", "icon":"Phone", "id":"tel"},
+            {"link":"i.nerovnyi@gmail.com", "icon":"Email", "id":"email"},
+            {"link":"@Igor_Nerovnyi", "icon":"Telegramm", "id":"tg"}
+        ],
+        "copi_to_cliboard":{"uk":"текст скопійований","en":"text copied","ru":"текст скопирован"}
     }
 
 }

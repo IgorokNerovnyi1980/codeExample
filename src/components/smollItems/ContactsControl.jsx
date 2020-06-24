@@ -5,11 +5,8 @@ import styled, {
   ThemeContext,
 } from 'styled-components'
 import {
-  useSelector,
+  useSelector, useDispatch,
 } from 'react-redux'
-// import {
-//   CopyToClipboard,
-// } from 'react-copy-to-clipboard'
 
 import {
   ReactComponent as Facebook,
@@ -61,11 +58,18 @@ const Line = styled.div`
     p{
       font-size:${props => props.theme.secondayFZ};
     }
+    input{
+      max-width:80%;
+      font-size:${props => props.theme.secondayFZ};
+      text-align:right;
+      cursor:pointer;
+    }
   `
 
 const ContactsControl = () => {
   const isLogin = useSelector(store => store.user.isLogin)
   const currentLang = useSelector(store => store.lang.currentLang)
+  const dispatch = useDispatch()
   const theme = useContext(ThemeContext)
   const iconWidth = '100%'
   const iconHeight = '100%'
@@ -85,8 +89,17 @@ const ContactsControl = () => {
     Phone,
     Telegramm,
   }
-  console.log('contacts.links', contacts.links)
 
+  const copyText = (id) => {
+    const myNode = document.querySelector(`#${id}`)
+    myNode.select()
+    myNode.setSelectionRange(0, 99999) /* For mobile devices */
+    document.execCommand('copy')
+    dispatch({
+      type: 'SHOW_WARNING',
+      payload: `${contacts.copi_to_cliboard[currentLang]}`,
+    })
+  }
   return (
     <SmollContainer
       flexJustify
@@ -116,24 +129,24 @@ const ContactsControl = () => {
                 )
               })}
               {contacts.copy.map(({
-                link, icon,
+                link, icon, id,
               }) => {
                 const Icon = img[icon]
 
                 return (
-                // <CopyToClipboard
-                //   text={link}
-                //   onCopy={() => alert('copy')}
-                // >
                   <Line key={icon}>
                     <Icon
                       width={copyIconWidth}
                       height={copyIconHeight}
                       fill={iconFill}
                     />
-                    <p>{link}</p>
+                    <input
+                      type="text"
+                      value={link}
+                      id={id}
+                      onClick={() => copyText(id)}
+                    />
                   </Line>
-                // </CopyToClipboard>
                 )
               })}
             </>
