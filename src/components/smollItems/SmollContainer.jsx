@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 `
 
 const SmollContainer = ({
-  children, height, flexJustify = false, minHeight = '17rem',
+  children, height = '10rem', flexJustify = false, minHeight = '17rem',
 }) => (
   <Wrapper
     height={height}

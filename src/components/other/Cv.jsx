@@ -3,9 +3,6 @@ import styled from 'styled-components'
 import {
   useSelector,
 } from 'react-redux'
-import {
-  NavLink,
-} from 'react-router-dom'
 import shortid from 'shortid'
 
 import data from '../../lib/cvData.json'

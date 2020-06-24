@@ -6,13 +6,14 @@ import SidePiece from '../components/SidePiece'
 import Center from '../components/Center'
 import AppControls from '../components/smollItems/AppControls'
 import UserControl from '../components/smollItems/UserControl'
-// import InDevelopment from '../components/DumpComponents/InDevelopment'
+import ContactsControl from '../components/smollItems/ContactsControl'
 import Cv from '../components/other/Cv'
 import WeatherControl from '../components/smollItems/WeatherControl'
 
 const AboutMePage = () => (
   <BaseComponent>
     <SidePiece left>
+      <ContactsControl />
       <UserControl />
     </SidePiece>
     <Center>

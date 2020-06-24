@@ -61,6 +61,11 @@
             "en":"additional features available to authorized users are displayed here",
             "ru":"здесь отображаются дополнительные функции, доступные авторизированным пользователям"
         },
+        "logout_social":{
+            "uk":"авторизуйтесь, щоб побачити контакти",
+            "en":"login to see contacts",
+            "ru":"авторизируйтесь, чтоб увидеть контакты"
+        },
         "login":{
             "uk":"вам доступні додаткові функції",
         "en":"additional features are available to you",
@@ -145,6 +150,20 @@
                     "ru":"пример отображения меню ресторана / прайса / каталога. возможности - просмотр состава категории товаров. для авторизированного пользователя доступны - выбор товаров, выбор колличества выбранного товара"
                 }
             }
+        ]
+    },
+    "contacts":{
+       
+        "links":[
+            {"link":"https://www.facebook.com/igor.nerovnyi", "icon":"Facebook"},
+            {"link":"https://github.com/IgorokNerovnyi1980", "icon":"GitHub"},
+            {"link":"https://www.linkedin.com/in/igor-nerovnyi-front-end-developer", "icon":"Linkedin"}
+            
+        ],
+        "copy":[
+            {"link":"+380669384848", "icon":"Phone"},
+            {"link":"i.nerovnyi@gmail.com", "icon":"Email"},
+            {"link":"@Igor_Nerovnyi", "icon":"Telegramm"}
         ]
     }
 
