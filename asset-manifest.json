@@ -1,21 +1,27 @@
 {
   "files": {
-    "main.js": "/codeExample/static/js/main.2c88a60f.chunk.js",
-    "main.js.map": "/codeExample/static/js/main.2c88a60f.chunk.js.map",
+    "main.js": "/codeExample/static/js/main.0f2fdc79.chunk.js",
+    "main.js.map": "/codeExample/static/js/main.0f2fdc79.chunk.js.map",
     "runtime-main.js": "/codeExample/static/js/runtime-main.545edb07.js",
     "runtime-main.js.map": "/codeExample/static/js/runtime-main.545edb07.js.map",
-    "static/js/2.a55939fb.chunk.js": "/codeExample/static/js/2.a55939fb.chunk.js",
-    "static/js/2.a55939fb.chunk.js.map": "/codeExample/static/js/2.a55939fb.chunk.js.map",
+    "static/js/2.b09b6ee2.chunk.js": "/codeExample/static/js/2.b09b6ee2.chunk.js",
+    "static/js/2.b09b6ee2.chunk.js.map": "/codeExample/static/js/2.b09b6ee2.chunk.js.map",
     "index.html": "/codeExample/index.html",
-    "precache-manifest.282ef5346148e2a59ecc123da6cbc6d9.js": "/codeExample/precache-manifest.282ef5346148e2a59ecc123da6cbc6d9.js",
+    "precache-manifest.634a25be6962f058a020e0071976f571.js": "/codeExample/precache-manifest.634a25be6962f058a020e0071976f571.js",
     "service-worker.js": "/codeExample/service-worker.js",
-    "static/js/2.a55939fb.chunk.js.LICENSE.txt": "/codeExample/static/js/2.a55939fb.chunk.js.LICENSE.txt",
+    "static/js/2.b09b6ee2.chunk.js.LICENSE.txt": "/codeExample/static/js/2.b09b6ee2.chunk.js.LICENSE.txt",
     "static/media/404.png": "/codeExample/static/media/404.2f895765.png",
-    "static/media/developer.png": "/codeExample/static/media/developer.1abda88b.png"
+    "static/media/developer.png": "/codeExample/static/media/developer.1abda88b.png",
+    "static/media/email_icon.43084bac.svg": "/codeExample/static/media/email_icon.43084bac.svg",
+    "static/media/fb_icon.7b04201c.svg": "/codeExample/static/media/fb_icon.7b04201c.svg",
+    "static/media/git_icon.f0478ecc.svg": "/codeExample/static/media/git_icon.f0478ecc.svg",
+    "static/media/linkedin_icon.3c853db7.svg": "/codeExample/static/media/linkedin_icon.3c853db7.svg",
+    "static/media/phone_icon.3839f635.svg": "/codeExample/static/media/phone_icon.3839f635.svg",
+    "static/media/tg_icon.3d6951e3.svg": "/codeExample/static/media/tg_icon.3d6951e3.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.545edb07.js",
-    "static/js/2.a55939fb.chunk.js",
-    "static/js/main.2c88a60f.chunk.js"
+    "static/js/2.b09b6ee2.chunk.js",
+    "static/js/main.0f2fdc79.chunk.js"
   ]
 }
