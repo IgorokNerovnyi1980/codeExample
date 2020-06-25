@@ -10,6 +10,7 @@ import connectComponent from '../redux/connectComponent'
 import PricePage from './PricePage'
 import NewsPage from './NewsPage'
 import NotFoundPage from './NotFoundPage'
+import InDevelopmentPage from './InDevelopmentPage'
 
 const CombinedPage = () => {
   const {
@@ -29,6 +30,9 @@ const CombinedPage = () => {
         break
       case '/examples/price':
         setComponent(PricePage)
+        break
+      case '/examples/drag_and_drop':
+        setComponent(InDevelopmentPage)
         break
       default: setComponent(null)
     }

@@ -149,6 +149,19 @@
                     "en":"An example of displaying a restaurant / price / catalog menu. features - view the composition of the product category. for an authorized user are available - selection of goods, selection of the number of selected goods",
                     "ru":"пример отображения меню ресторана / прайса / каталога. возможности - просмотр состава категории товаров. для авторизированного пользователя доступны - выбор товаров, выбор колличества выбранного товара"
                 }
+            },
+            {
+                "label":{
+                    "uk":"drag & drop",
+                    "en":"drag & drop",
+                    "ru":"drag & drop"
+                },
+                "rout":"drag_and_drop",
+                "description":{
+                    "uk":"TODO list схожий на trello",
+                    "en":"TODO list similar to trello",
+                    "ru":"TODO list похожий на trello"
+                }
             }
         ]
     },

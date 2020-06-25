@@ -46,7 +46,10 @@ const InDevelopment = () => {
     development,
   } = textData
   return (
-    <CenterLayout>
+    <CenterLayout
+      width="96%"
+      marginTop="0.5rem"
+    >
       <Wrapper to="/home">
         <p>{development.page[currentLang]}</p>
         <LogoImg src={developer} />
