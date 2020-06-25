@@ -47,6 +47,7 @@ export const other = {
   secondaryPad: '0.5rem',
   mainSidePad: '0 1rem',
   secondarySidePad: '0.1rem 0.5rem',
+  mainBR: '0.5rem',
 }
 
 export default {
