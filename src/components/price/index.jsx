@@ -32,7 +32,11 @@ const Price = () => {
   }, [value])
 
   const categoryToogler = (categoryIndex) => {
-    setIsOpenCategory(categoryIndex)
+    if (categoryIndex === isOpenCategory) {
+      setIsOpenCategory('')
+    } else {
+      setIsOpenCategory(categoryIndex)
+    }
   }
 
   const updateChoise = (category, id, type) => {
