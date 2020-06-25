@@ -1,6 +1,4 @@
-import React, {
-  useState,
-} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -65,21 +63,17 @@ const HaveMany = styled.div`
 
 const CategoriesItem = ({
   label = 'Default', content = [], currentCategory,
-  fnToggle, fnSetQantity,
-}) => {
-  const [isOpen, setIsOpen] = useState(true)
-  const toggler = () => {
-    setIsOpen(!isOpen)
-  }
-  return (
-    <Wrapper>
-      <Label
-        bottomRadius={!isOpen}
-        onClick={toggler}
-      >
-        {label}
-      </Label>
-      {isOpen && (
+  fnToggle, fnSetQantity, isOpenCategory, fnToggleIsOpen,
+}) => (
+  <Wrapper>
+    <Label
+      isOpen={isOpenCategory === currentCategory}
+      bottomRadius={isOpenCategory !== currentCategory}
+      onClick={() => fnToggleIsOpen(currentCategory)}
+    >
+      {label}
+    </Label>
+    {(isOpenCategory === currentCategory) && (
       <Content>
         {content.map(obj => (
           <Line
@@ -116,8 +110,8 @@ const CategoriesItem = ({
           </Line>
         ))}
       </Content>
-      )}
-    </Wrapper>
-  )
-}
+    )}
+  </Wrapper>
+)
+
 export default CategoriesItem

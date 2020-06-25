@@ -20,6 +20,7 @@ const Price = () => {
   const dispatch = useDispatch()
   const [value, setValue] = useState(null)
   const [state, setState] = useState([])
+  const [isOpenCategory, setIsOpenCategory] = useState('')
 
   useEffect(() => {
     setValue(Math.ceil(toolsList.length / 3))
@@ -27,7 +28,12 @@ const Price = () => {
 
   useEffect(() => {
     if (value)setState(separateArr(toolsList, value))
+    setIsOpenCategory(toolsList[0].id)
   }, [value])
+
+  const categoryToogler = (categoryIndex) => {
+    setIsOpenCategory(categoryIndex)
+  }
 
   const updateChoise = (category, id, type) => {
     const obj = category.data.find(el => el.id === id)
@@ -64,6 +70,7 @@ const Price = () => {
       })
     }
   }
+
   const toggler = (id, categoryId) => {
     if (isLogin) {
       const concatinateArr = state.flatMap(arr => arr)
@@ -163,6 +170,8 @@ const Price = () => {
                   currentCategory={obj.id}
                   fnToggle={toggler}
                   fnSetQantity={setQantity}
+                  isOpenCategory={isOpenCategory}
+                  fnToggleIsOpen={categoryToogler}
                 />
               ))}
             </Row>
