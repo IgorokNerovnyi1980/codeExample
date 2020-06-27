@@ -1,7 +1,9 @@
-import React from 'react'
+import React, {
+  forwardRef,
+} from 'react'
 import styled from 'styled-components'
 import {
-  Droppable,
+  Droppable, Draggable,
 } from 'react-beautiful-dnd'
 
 import Task from './Task'
@@ -26,33 +28,50 @@ const Label = styled.input`
 const Content = styled.div``
 
 const Column = ({
-  tasks, column,
-}) => (
-  <Wrapper>
-    <Label
-      type="text"
-      value={column.label}
-      disabled
-    />
-    <Droppable droppableId={column.id}>
-      {provided => (
-        <Content
-          ref={provided.innerRef}
-          {...provided.droppableProps}
+  tasks, column, columnIndex,
+}, ref) => (
+  <Draggable
+    draggableId={column.id}
+    index={columnIndex}
+  >
+    {provided => (
+
+      <Wrapper
+        {...provided.draggableProps}
+        ref={provided.innerRef}
+
+      >
+        <Label
+          type="text"
+          value={column.label}
+          disabled
+
+          {...provided.dragHandleProps}
+        />
+        <Droppable
+          droppableId={column.id}
+          type="task"
         >
-          {tasks.map((task, index) => (
-            <Task
+          {taskProvided => (
+            <Content
+              ref={taskProvided.innerRef}
+              {...taskProvided.droppableProps}
+            >
+              {tasks.map((task, index) => (
+                <Task
 
-              key={task.id}
-              task={task}
-              index={index}
-            />
-          ))}
-          {provided.placeholder}
-        </Content>
-      )}
-    </Droppable>
+                  key={task.id}
+                  task={task}
+                  TaskIndex={index}
+                />
+              ))}
+              {taskProvided.placeholder}
+            </Content>
+          )}
+        </Droppable>
 
-  </Wrapper>
+      </Wrapper>
+    )}
+  </Draggable>
 )
 export default Column

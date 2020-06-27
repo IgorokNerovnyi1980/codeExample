@@ -17,11 +17,11 @@ const Wrapper = styled.div`
 `
 
 const Task = ({
-  task, index,
+  task, TaskIndex,
 }) => (
   <Draggable
     draggableId={task.id}
-    index={index}
+    index={TaskIndex}
   >
     {(provided, snapshot) => (
 

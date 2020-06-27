@@ -1,12 +1,12 @@
 import React, {
-  useState,
+  useState, useContext,
 } from 'react'
 import {
-  DragDropContext,
+  ThemeContext,
+} from 'styled-components'
+import {
+  DragDropContext, Droppable,
 } from 'react-beautiful-dnd'
-// import {
-//   useSelector, useDispatch,
-// } from 'react-redux'
 
 import CenterLayout from '../DumpComponents/CenterLayout'
 
@@ -37,61 +37,124 @@ const testData = {
       label: 'first column',
       taskIds: ['task1', 'task2', 'task3', 'task4'],
     },
+    column2: {
+      id: 'column2',
+      label: 'second column',
+      taskIds: [],
+    },
   },
-  columnOrder: ['column1'],
+  columnOrder: ['column1', 'column2'],
 }
 
 const LikeTrello = () => {
+  const theme = useContext(ThemeContext)
   const [data, setData] = useState(testData)
 
+  const onDragStart = () => {
+    document.querySelector('#header').style.transition = 'background-color 0.2s ease'
+  }
+
+  const onDragUpdate = (update) => {
+    const {
+      destination,
+    } = update
+    const opacity = destination
+      ? destination.index / Object.keys(data.tasks).length
+      : 0
+    document.querySelector('#header').style.backgroundColor = `rgba(142, 148, 156,${opacity}`
+  }
+
   const onDragEnd = (result) => {
+    document.querySelector('#header').style.backgroundColor = theme.darkColdBg
     const {
       destination, source, draggableId,
     } = result
     if (!destination) return
     if (destination.droppableId === source.droppableId && destination.index === source.index) return
 
-    const column = data.columns[source.droppableId]
-    const newTaskIds = Array.from(column.taskIds)
-    newTaskIds.splice(source.index, 1)
-    newTaskIds.splice(destination.index, 0, draggableId)
-    const newColum = {
-      ...column,
-      taskIds: newTaskIds,
+    const startColumn = data.columns[source.droppableId]
+    const endColumn = data.columns[destination.droppableId]
+
+    if (startColumn === endColumn) {
+      const newTaskIds = Array.from(startColumn.taskIds)
+      newTaskIds.splice(source.index, 1)
+      newTaskIds.splice(destination.index, 0, draggableId)
+      const newColum = {
+        ...startColumn,
+        taskIds: newTaskIds,
+      }
+      const resultData = {
+        ...data,
+        columns: {
+          ...data.columns,
+          [newColum.id]: newColum,
+        },
+      }
+      setData(resultData)
+    } else {
+      const startTaskIds = Array.from(startColumn.taskIds)
+      startTaskIds.splice(source.index, 1)
+      const newStartColumn = {
+        ...startColumn,
+        taskIds: startTaskIds,
+      }
+      const endTaskIds = Array.from(endColumn.taskIds)
+      endTaskIds.splice(destination.index, 0, draggableId)
+
+      const newEndColumn = {
+        ...endColumn,
+        taskIds: endTaskIds,
+      }
+      const resultData = {
+        ...data,
+        columns: {
+          ...data.columns,
+          [newStartColumn.id]: newStartColumn,
+          [newEndColumn.id]: newEndColumn,
+        },
+      }
+      setData(resultData)
     }
-    const resultData = {
-      ...data,
-      columns: {
-        ...data.colomns,
-        [newColum.id]: newColum,
-      },
-    }
-    setData(resultData)
   }
 
   return (
     <DragDropContext
+      onDragStart={onDragStart}
+      onDragUpdate={onDragUpdate}
       onDragEnd={onDragEnd}
     >
-      <CenterLayout
-        width="96%"
-        marginTop="0.5rem"
-      // flexDirection={small ? 'column' : 'row'}
-        justify="flex-start"
-        align="flex-start"
+      <Droppable
+        droppableId="all-columns"
+        direction="horizontal"
+        type="column"
       >
-        {data && data.columnOrder.map((columnId) => {
-          const column = data.columns[columnId]
-          const tasks = column.taskIds.map(taskId => data.tasks[taskId])
-          return (
-            <Column
-              key={column.id}
-              column={column}
-              tasks={tasks}
-            />
-          )
-        })}
-      </CenterLayout>
+        {provided => (
+
+          <CenterLayout
+            width="96%"
+            marginTop="0.5rem"
+      // flexDirection={small ? 'column' : 'row'}
+            justify="flex-start"
+            align="flex-start"
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+          >
+            {data && data.columnOrder.map((columnId, index) => {
+              const column = data.columns[columnId]
+              const tasks = column.taskIds.map(taskId => data.tasks[taskId])
+              return (
+                <Column
+                  key={column.id}
+                  column={column}
+                  tasks={tasks}
+                  columnIndex={index}
+                />
+              )
+            })}
+            {provided.placeholder}
+          </CenterLayout>
+        )}
+      </Droppable>
     </DragDropContext>
 
   )

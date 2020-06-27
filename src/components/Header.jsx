@@ -86,7 +86,10 @@ const Header = ({
       {({
         small,
       }) => (
-        <Wrapper pagging={small ? '2.4rem 0.5rem' : '2.4rem'}>
+        <Wrapper
+          pagging={small ? '2.4rem 0.5rem' : '2.4rem'}
+          id="header"
+        >
           <Logo label={logo[currentLang]} />
           { pathname === '/examples/news'
             ? (
