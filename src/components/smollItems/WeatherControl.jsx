@@ -1,6 +1,9 @@
 import React, {
   useEffect, useState,
 } from 'react'
+import {
+  useDispatch
+} from 'react-redux'
 
 import connectComponent from '../../redux/connectComponent'
 import Btn from '../Button'
@@ -15,7 +18,9 @@ const WeatherControl = ({
     weather,
   } = textData
 
-  const [userCoords, setUserCoords] = useState(null)
+  const dispatch = useDispatch()
+
+  const [ userCoords, setUserCoords ] = useState(null)
 
   useEffect(() => {
     const onSuccess = (position) => {
@@ -37,7 +42,7 @@ const WeatherControl = ({
       flexJustify
     >
 
-      {currentWeather
+      {currentWeather && currentWeather.success
       && (
       <>
         <p>{currentWeather.location.name}</p>
@@ -46,7 +51,8 @@ const WeatherControl = ({
       )}
       <Btn
         label={currentWeather ? weather.button.update[currentLang] : weather.button.get[currentLang]}
-        fnClick={() => (userCoords ? getCurrentWeather(userCoords) : baseWarning('in weather', currentLang))}
+        // fnClick={() => (userCoords ? getCurrentWeather(userCoords) : baseWarning('in weather', currentLang))}
+        fnClick={() => dispatch({type:'SHOW_WARNING', payload:'this service not work'})}
 
         dark
       />
